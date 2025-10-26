@@ -46,9 +46,9 @@ export const SERVICES_DATA: Service[] = [
 ];
 
 const categoryImages: { [key: string]: string } = {
-  "Interventoría de obras Viales": "https://images.unsplash.com/photo-1541316644339-329b1b774640?q=80&w=1920&h=1080&fit=crop",
-  "Estudios y Diseños": "https://images.unsplash.com/photo-1581092580497-909141b44917?q=80&w=1920&h=1080&fit=crop",
-  "Interventoría y Mantenimiento de Obras Civiles": "https://images.unsplash.com/photo-1621935642921-b0352225a588?q=80&w=1920&h=1080&fit=crop",
+  "Interventoría de obras Viales": "public/images/Generated Image October 26, 2025 - 10_20PM (1).png",
+  "Estudios y Diseños": "public/images/Generated Image October 26, 2025 - 10_20PM.png",
+  "Interventoría y Mantenimiento de Obras Civiles": "public/images/Generated Image October 26, 2025 - 10_21PM.png",
   "Interventorías y gerencias...": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1920&h=1080&fit=crop",
   "Interventoría en Estudios y Diseños": "https://images.unsplash.com/photo-1519756301029-33a5d04cd0ba?q=80&w=1920&h=1080&fit=crop",
 };
