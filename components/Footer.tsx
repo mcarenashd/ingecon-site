@@ -5,6 +5,7 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ setPage }) => {
+  const logoSrc = `${import.meta.env.BASE_URL}images/logo-ingecon-CUG5jr9Z.png`;
 
   const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     event.preventDefault();
@@ -39,7 +40,7 @@ const Footer: React.FC<FooterProps> = ({ setPage }) => {
           {/* About Section */}
           <div className="mb-6 md:mb-0">
             <a href="#inicio" onClick={(e) => handleNavClick(e, '#inicio')} className="inline-block mb-4 cursor-pointer">
-              <img src="/images/logo-ingecon-CUG5jr9Z.png" alt="Ingecon Logo" className="h-12 w-auto" />
+              <img src={logoSrc} alt="Ingecon Logo" className="h-12 w-auto" />
             </a>
             <p className="text-gray-200">Convirtiendo ideas en estructuras sólidas con experiencia y dedicación.</p>
           </div>

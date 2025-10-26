@@ -1,13 +1,15 @@
 import React from 'react';
 
 const About: React.FC = () => {
+  const aboutImage = `${import.meta.env.BASE_URL}images/about-us-BdDxQZ4K.png`;
+
   return (
     <section id="nosotros" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <img 
-              src="/images/about-us-BdDxQZ4K.png" 
+              src={aboutImage}
               alt="Equipo de Ingecon colaborando en un proyecto de ingeniería"
               className="rounded-lg shadow-xl w-full h-auto object-cover"
             />

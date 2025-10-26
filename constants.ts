@@ -1,6 +1,8 @@
 
 import type { NavLink, Service, Client, Project } from './types';
 
+const imageAsset = (fileName: string) => `${import.meta.env.BASE_URL}images/${fileName}`;
+
 export const NAV_LINKS: NavLink[] = [
   { href: '#inicio', label: 'Inicio' },
   { href: '#nosotros', label: 'Nosotros' },
@@ -46,11 +48,11 @@ export const SERVICES_DATA: Service[] = [
 ];
 
 const categoryImages: { [key: string]: string } = {
-  "Interventoría de obras Viales": "public/images/Generated Image October 26, 2025 - 10_20PM (1).png",
-  "Estudios y Diseños": "public/images/Generated Image October 26, 2025 - 10_20PM.png",
-  "Interventoría y Mantenimiento de Obras Civiles": "public/images/Generated Image October 26, 2025 - 10_21PM.png",
-  "Interventorías y gerencias...": "public/images/Generated Image October 26, 2025 - 10_20PM.png",
-  "Interventoría en Estudios y Diseños": "public/images/Generated Image October 26, 2025 - 10_20PM.png",
+  "Interventoría de obras Viales": imageAsset('Generated Image October 26, 2025 - 10_20PM (1).png'),
+  "Estudios y Diseños": imageAsset('Generated Image October 26, 2025 - 10_20PM.png'),
+  "Interventoría y Mantenimiento de Obras Civiles": imageAsset('Generated Image October 26, 2025 - 10_21PM.png'),
+  "Interventorías y gerencias...": imageAsset('Generated Image October 26, 2025 - 10_20PM.png'),
+  "Interventoría en Estudios y Diseños": imageAsset('Generated Image October 26, 2025 - 10_20PM.png'),
 };
 
 const projectsRaw: Omit<Project, 'image'>[] = [
@@ -757,12 +759,12 @@ export const PROJECTS_DATA: Project[] = projectsRaw.map(project => ({
 
 
 export const CLIENTS_DATA: Client[] = [
-    { name: 'INVIAS', logo: '/images/invias-qaMZ1HyI.png' },
-    { name: 'IDU', logo: '/images/idu-CQevI6pt.png' },
-    { name: 'ANI', logo: '/images/ani-DyDcJc--.png' },
-    { name: 'Aeronáutica Civil', logo: '/images/aeronautica-Cgr0jMIN.png' },
-    { name: 'Transcaribe', logo: '/images/transcaribe-DNhhsVkk.png' },
-    { name: 'Avante', logo: '/images/avante-DhJD4x45.png' },
-    { name: 'FONADE', logo: '/images/enterritorio-C8kYLDr6.png' }, // Using Enterritorio logo as placeholder
-    { name: 'Gobernación de Antioquia', logo: '/images/metrocali-CJiI77fT.png' }, // Using Metrocali logo as placeholder
+    { name: 'INVIAS', logo: imageAsset('invias-qaMZ1HyI.png') },
+    { name: 'IDU', logo: imageAsset('idu-CQevI6pt.png') },
+    { name: 'ANI', logo: imageAsset('ani-DyDcJc--.png') },
+    { name: 'Aeronáutica Civil', logo: imageAsset('aeronautica-Cgr0jMIN.png') },
+    { name: 'Transcaribe', logo: imageAsset('transcaribe-DNhhsVkk.png') },
+    { name: 'Avante', logo: imageAsset('avante-DhJD4x45.png') },
+    { name: 'FONADE', logo: imageAsset('enterritorio-C8kYLDr6.png') }, // Using Enterritorio logo as placeholder
+    { name: 'Gobernación de Antioquia', logo: imageAsset('metrocali-CJiI77fT.png') }, // Using Metrocali logo as placeholder
 ];
