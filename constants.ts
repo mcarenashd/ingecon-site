@@ -757,12 +757,12 @@ export const PROJECTS_DATA: Project[] = projectsRaw.map(project => ({
 
 
 export const CLIENTS_DATA: Client[] = [
-    { name: 'INVIAS', logo: './0008.png' },
-    { name: 'IDU', logo: './0007.png' },
-    { name: 'ANI', logo: './0002.png' },
-    { name: 'Aeronáutica Civil', logo: './0001.png' },
-    { name: 'Transcaribe', logo: './0011.png' },
-    { name: 'Avante', logo: './0003.png' },
-    { name: 'FONADE', logo: './0006.png' }, // Using Enterritorio logo as placeholder
-    { name: 'Gobernación de Antioquia', logo: './0010.png' }, // Using Metrocali logo as placeholder
+    { name: 'INVIAS', logo: '/images/invias-qaMZ1HyI.png' },
+    { name: 'IDU', logo: '/images/idu-CQevI6pt.png' },
+    { name: 'ANI', logo: '/images/ani-DyDcJc--.png' },
+    { name: 'Aeronáutica Civil', logo: '/images/aeronautica-Cgr0jMIN.png' },
+    { name: 'Transcaribe', logo: '/images/transcaribe-DNhhsVkk.png' },
+    { name: 'Avante', logo: '/images/avante-DhJD4x45.png' },
+    { name: 'FONADE', logo: '/images/enterritorio-C8kYLDr6.png' }, // Using Enterritorio logo as placeholder
+    { name: 'Gobernación de Antioquia', logo: '/images/metrocali-CJiI77fT.png' }, // Using Metrocali logo as placeholder
 ];

@@ -59,7 +59,7 @@ const Header: React.FC<HeaderProps> = ({ setPage, currentPage }) => {
       <div className="container mx-auto px-6 py-3">
         <div className="flex justify-between items-center">
           <a href="#inicio" onClick={(e) => handleNavClick(e, '#inicio')} className="text-2xl font-bold">
-            <img src="./0009.png" alt="Ingecon Logo" className="h-12 w-auto" />
+            <img src="/images/logo-ingecon-CUG5jr9Z.png" alt="Ingecon Logo" className="h-12 w-auto" />
           </a>
           
           <nav className="hidden md:flex space-x-8">

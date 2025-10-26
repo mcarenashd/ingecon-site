@@ -7,7 +7,7 @@ const About: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <img 
-              src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1200&h=800&fit=crop" 
+              src="/images/about-us-BdDxQZ4K.png" 
               alt="Equipo de Ingecon colaborando en un proyecto de ingeniería"
               className="rounded-lg shadow-xl w-full h-auto object-cover"
             />
