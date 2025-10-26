@@ -49,8 +49,8 @@ const categoryImages: { [key: string]: string } = {
   "Interventoría de obras Viales": "public/images/Generated Image October 26, 2025 - 10_20PM (1).png",
   "Estudios y Diseños": "public/images/Generated Image October 26, 2025 - 10_20PM.png",
   "Interventoría y Mantenimiento de Obras Civiles": "public/images/Generated Image October 26, 2025 - 10_21PM.png",
-  "Interventorías y gerencias...": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1920&h=1080&fit=crop",
-  "Interventoría en Estudios y Diseños": "https://images.unsplash.com/photo-1519756301029-33a5d04cd0ba?q=80&w=1920&h=1080&fit=crop",
+  "Interventorías y gerencias...": "public/images/Generated Image October 26, 2025 - 10_20PM.png",
+  "Interventoría en Estudios y Diseños": "public/images/Generated Image October 26, 2025 - 10_20PM.png",
 };
 
 const projectsRaw: Omit<Project, 'image'>[] = [
