@@ -48,11 +48,11 @@ export const SERVICES_DATA: Service[] = [
 ];
 
 const categoryImages: { [key: string]: string } = {
-  "Interventoría de obras Viales": imageAsset('Generated Image October 26, 2025 - 10_20PM (1).png'),
-  "Estudios y Diseños": imageAsset('Generated Image October 26, 2025 - 10_20PM.png'),
-  "Interventoría y Mantenimiento de Obras Civiles": imageAsset('Generated Image October 26, 2025 - 10_21PM.png'),
-  "Interventorías y gerencias...": imageAsset('Generated Image October 26, 2025 - 10_20PM.png'),
-  "Interventoría en Estudios y Diseños": imageAsset('Generated Image October 26, 2025 - 10_20PM.png'),
+  "Interventoría de obras Viales": imageAsset('Generated Image October 26, 2025 - 10_20PM.webp'),
+  "Estudios y Diseños": imageAsset('Generated Image October 26, 2025 - 10_20PM.webp'),
+  "Interventoría y Mantenimiento de Obras Civiles": imageAsset('Generated Image October 26, 2025 - 10_21PM.webp'),
+  "Interventorías y gerencias...": imageAsset('Generated Image October 26, 2025 - 10_20PM.webp'),
+  "Interventoría en Estudios y Diseños": imageAsset('Generated Image October 26, 2025 - 10_20PM.webp'),
 };
 
 const projectsRaw: Omit<Project, 'image'>[] = [
@@ -759,12 +759,12 @@ export const PROJECTS_DATA: Project[] = projectsRaw.map(project => ({
 
 
 export const CLIENTS_DATA: Client[] = [
-    { name: 'INVIAS', logo: imageAsset('invias-qaMZ1HyI.png') },
-    { name: 'IDU', logo: imageAsset('idu-CQevI6pt.png') },
-    { name: 'ANI', logo: imageAsset('ani-DyDcJc--.png') },
-    { name: 'Aeronáutica Civil', logo: imageAsset('aeronautica-Cgr0jMIN.png') },
-    { name: 'Transcaribe', logo: imageAsset('transcaribe-DNhhsVkk.png') },
-    { name: 'Avante', logo: imageAsset('avante-DhJD4x45.png') },
-    { name: 'FONADE', logo: imageAsset('enterritorio-C8kYLDr6.png') }, // Using Enterritorio logo as placeholder
-    { name: 'Gobernación de Antioquia', logo: imageAsset('metrocali-CJiI77fT.png') }, // Using Metrocali logo as placeholder
+    { name: 'INVIAS', logo: imageAsset('invias-qaMZ1HyI.webp') },
+    { name: 'IDU', logo: imageAsset('idu-CQevI6pt.webp') },
+    { name: 'ANI', logo: imageAsset('ani-DyDcJc--.webp') },
+    { name: 'Aeronáutica Civil', logo: imageAsset('aeronautica-Cgr0jMIN.webp') },
+    { name: 'Transcaribe', logo: imageAsset('transcaribe-DNhhsVkk.webp') },
+    { name: 'Avante', logo: imageAsset('avante-DhJD4x45.webp') },
+    { name: 'FONADE', logo: imageAsset('enterritorio-C8kYLDr6.webp') }, // Using Enterritorio logo as placeholder
+    { name: 'Gobernación de Antioquia', logo: imageAsset('metrocali-CJiI77fT.webp') }, // Using Metrocali logo as placeholder
 ];

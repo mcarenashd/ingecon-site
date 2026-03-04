@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Hero: React.FC = () => {
-  const heroBackground = `${import.meta.env.BASE_URL}images/calle-92-654YlBhL.png`;
+  const heroBackground = `${import.meta.env.BASE_URL}images/calle-92-654YlBhL.webp`;
 
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center text-center text-white">

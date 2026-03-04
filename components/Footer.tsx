@@ -5,7 +5,7 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ setPage }) => {
-  const logoSrc = `${import.meta.env.BASE_URL}images/logo-ingecon-CUG5jr9Z.png`;
+  const logoSrc = `${import.meta.env.BASE_URL}images/logo-ingecon-CUG5jr9Z.webp`;
 
   const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     event.preventDefault();

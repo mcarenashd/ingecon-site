@@ -8,7 +8,7 @@ const stats = [
 ];
 
 const About: React.FC = () => {
-  const aboutImage = `${import.meta.env.BASE_URL}images/about-us-BdDxQZ4K.png`;
+  const aboutImage = `${import.meta.env.BASE_URL}images/about_ingecon_bogota.webp`;
 
   return (
     <>

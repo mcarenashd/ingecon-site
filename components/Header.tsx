@@ -9,7 +9,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ setPage, currentPage }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const logoSrc = `${import.meta.env.BASE_URL}images/logo-ingecon-CUG5jr9Z.png`;
+  const logoSrc = `${import.meta.env.BASE_URL}images/logo-ingecon-CUG5jr9Z.webp`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -81,13 +81,6 @@ const Header: React.FC<HeaderProps> = ({ setPage, currentPage }) => {
                 {link.label}
               </a>
             ))}
-            <a
-              href="#contacto"
-              onClick={(e) => handleNavClick(e, '#contacto')}
-              className="ml-4 px-5 py-2 rounded-lg bg-[#6a9a10] hover:bg-[#5a8509] text-white text-sm font-semibold transition-all duration-200 shadow-sm hover:shadow"
-            >
-              Contáctenos
-            </a>
           </nav>
 
           {/* Mobile hamburger */}
