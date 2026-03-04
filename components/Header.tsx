@@ -56,11 +56,11 @@ const Header: React.FC<HeaderProps> = ({ setPage, currentPage }) => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || isOpen ? 'bg-white shadow-md' : 'bg-transparent'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/30 backdrop-blur-sm' : 'bg-transparent'}`}>
       <div className="container mx-auto px-6 py-3">
         <div className="flex justify-between items-center">
           <a href="#inicio" onClick={(e) => handleNavClick(e, '#inicio')} className="text-2xl font-bold">
-            <img src={logoSrc} alt="Ingecon Logo" className="h-12 w-auto" />
+            <img src={logoSrc} alt="Ingecon Logo" className="h-20 w-auto" />
           </a>
           
           <nav className="hidden md:flex space-x-8">
@@ -69,7 +69,7 @@ const Header: React.FC<HeaderProps> = ({ setPage, currentPage }) => {
                 key={link.href} 
                 href={link.href} 
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-gray-600 hover:text-[#7cb342] transition-colors duration-300 font-medium cursor-pointer"
+                className="text-white hover:text-[#7cb342] transition-colors duration-300 font-medium cursor-pointer drop-shadow-md"
               >
                 {link.label}
               </a>
@@ -77,11 +77,11 @@ const Header: React.FC<HeaderProps> = ({ setPage, currentPage }) => {
           </nav>
 
           <div className="md:hidden">
-            <button onClick={toggleMenu} className="text-gray-800 focus:outline-none z-[1001]">
+            <button onClick={toggleMenu} className="text-white focus:outline-none z-[1001]">
               <div className="w-6 h-6 flex flex-col justify-around">
-                <span className={`block w-full h-0.5 bg-gray-800 transition-transform duration-300 ${isOpen ? 'transform rotate-45 translate-y-[5px]' : ''}`}></span>
-                <span className={`block w-full h-0.5 bg-gray-800 transition-opacity duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
-                <span className={`block w-full h-0.5 bg-gray-800 transition-transform duration-300 ${isOpen ? 'transform -rotate-45 -translate-y-[5px]' : ''}`}></span>
+                <span className={`block w-full h-0.5 ${isOpen ? 'bg-gray-800' : 'bg-white'} transition-transform duration-300 ${isOpen ? 'transform rotate-45 translate-y-[5px]' : ''}`}></span>
+                <span className={`block w-full h-0.5 ${isOpen ? 'bg-gray-800' : 'bg-white'} transition-opacity duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
+                <span className={`block w-full h-0.5 ${isOpen ? 'bg-gray-800' : 'bg-white'} transition-transform duration-300 ${isOpen ? 'transform -rotate-45 -translate-y-[5px]' : ''}`}></span>
               </div>
             </button>
           </div>
