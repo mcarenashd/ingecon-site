@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { useTranslation } from '../i18n';
+
+const EMAILJS_SERVICE_ID = 'service_v64solr';
+const EMAILJS_TEMPLATE_ID = 'template_wkwk3tg';
+const EMAILJS_PUBLIC_KEY = 'YZW_J8eSQzo57U8sG';
 
 type FormData = { name: string; email: string; message: string };
 type FormErrors = { name: string; email: string; message: string };
-type Status = 'idle' | 'success' | 'error';
+type Status = 'idle' | 'sending' | 'success' | 'error';
 
 const PhoneIcon = () => (
   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -46,12 +51,22 @@ const Contact: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-    setStatus('success');
-    setFormData({ name: '', email: '', message: '' });
-    setErrors({ name: '', email: '', message: '' });
+    setStatus('sending');
+    try {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      }, EMAILJS_PUBLIC_KEY);
+      setStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+      setErrors({ name: '', email: '', message: '' });
+    } catch {
+      setStatus('error');
+    }
   };
 
   const inputBase = 'w-full bg-gray-50 text-gray-900 px-4 py-3 rounded-lg border text-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#6a9a10]/40';
@@ -174,10 +189,14 @@ const Contact: React.FC = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-[#6a9a10] hover:bg-[#5a8509] text-white font-semibold py-3.5 px-6 rounded-lg text-sm transition-all duration-200 shadow-sm hover:shadow"
+                  disabled={status === 'sending'}
+                  className="w-full bg-[#6a9a10] hover:bg-[#5a8509] disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold py-3.5 px-6 rounded-lg text-sm transition-all duration-200 shadow-sm hover:shadow"
                 >
-                  {t.contact.formSubmit}
+                  {status === 'sending' ? t.contact.formSending : t.contact.formSubmit}
                 </button>
+                {status === 'error' && (
+                  <p className="text-red-500 text-sm text-center mt-2">{t.contact.formError}</p>
+                )}
               </form>
             )}
           </div>

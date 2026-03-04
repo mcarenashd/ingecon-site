@@ -58,7 +58,7 @@ const es = {
         description: 'Gestión de interventoría en proyectos de espacio público, andenes, ciclorutas, puentes peatonales y equipamientos urbanos.',
       },
       {
-        title: 'Interventoría a Servicios de Telecomunicaciones',
+        title: 'Servicios de Telecomunicaciones',
         description: 'Supervisión técnica, administrativa y financiera de contratos de instalación, operación y mantenimiento de infraestructura de telecomunicaciones.',
       },
     ],
@@ -107,6 +107,8 @@ const es = {
     errorEmailRequired: 'El email es obligatorio.',
     errorEmailInvalid: 'Formato de email inválido.',
     errorMessageRequired: 'El mensaje es obligatorio.',
+    formSending: 'Enviando...',
+    formError: 'No se pudo enviar el mensaje. Intente de nuevo.',
   },
 
   footer: {

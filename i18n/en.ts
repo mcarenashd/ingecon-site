@@ -60,7 +60,7 @@ const en: Translations = {
         description: 'Oversight management for public space projects, sidewalks, bike paths, pedestrian bridges, and urban infrastructure.',
       },
       {
-        title: 'Telecommunications Services Oversight',
+        title: 'Telecommunications Services',
         description: 'Technical, administrative, and financial supervision of contracts for the installation, operation, and maintenance of telecommunications infrastructure.',
       },
     ],
@@ -109,6 +109,8 @@ const en: Translations = {
     errorEmailRequired: 'Email is required.',
     errorEmailInvalid: 'Invalid email format.',
     errorMessageRequired: 'Message is required.',
+    formSending: 'Sending...',
+    formError: 'Could not send the message. Please try again.',
   },
 
   footer: {
