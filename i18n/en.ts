@@ -32,7 +32,7 @@ const en: Translations = {
     statFounded: 'Year founded',
     eyebrow: 'Who we are',
     heading: 'A firm with a proven track record in public infrastructure.',
-    descriptionBefore: 'We are an organization dedicated to Oversight, Consulting, and Management. The company was founded in 2001 under the name Ingenierías Ltda.; in August 1998 it changed its corporate name to INGECON S.A. and on September 5, 2012 it became ',
+    descriptionBefore: 'We are an organization dedicated to Oversight, Consulting, and Management. The company was founded in 1978 under the name Ingenierías Ltda.; in August 1998 it changed its corporate name to INGECON S.A. and on September 5, 2012 it became ',
     descriptionBold: 'INGENIERÍA Y CONSULTORÍA INGECON S.A.S',
     descriptionAfter: '.',
     missionTitle: 'Our Mission',

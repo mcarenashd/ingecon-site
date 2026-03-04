@@ -30,7 +30,7 @@ const es = {
     statFounded: 'Año de fundación',
     eyebrow: 'Quiénes somos',
     heading: 'Una firma con historial comprobado en infraestructura pública.',
-    descriptionBefore: 'Somos una organización dedicada a la Interventoría, Consultoría y Gerencia. La Empresa nació en el año 2001 con el nombre de Ingenierías Ltda.; a partir de Agosto de 1.998 cambió su razón social a INGECON S.A. y a partir del 5 de Septiembre de 2012 cambió su razón social a ',
+    descriptionBefore: 'Somos una organización dedicada a la Interventoría, Consultoría y Gerencia. La Empresa nació en el año de 1.978 con el nombre de Ingenierías Ltda.; a partir de Agosto de 1.998 cambió su razón social a INGECON S.A. y a partir del 5 de Septiembre de 2012 cambió su razón social a ',
     descriptionBold: 'INGENIERÍA Y CONSULTORÍA INGECON S.A.S',
     descriptionAfter: '.',
     missionTitle: 'Nuestra Misión',
