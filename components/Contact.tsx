@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from '../i18n';
 
 type FormData = { name: string; email: string; message: string };
 type FormErrors = { name: string; email: string; message: string };
@@ -22,6 +23,7 @@ const LocationIcon = () => (
 );
 
 const Contact: React.FC = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState<FormData>({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState<FormErrors>({ name: '', email: '', message: '' });
   const [status, setStatus] = useState<Status>('idle');
@@ -29,10 +31,10 @@ const Contact: React.FC = () => {
   const validate = (): boolean => {
     const newErrors: FormErrors = { name: '', email: '', message: '' };
     let isValid = true;
-    if (!formData.name.trim()) { newErrors.name = 'El nombre es obligatorio.'; isValid = false; }
-    if (!formData.email.trim()) { newErrors.email = 'El email es obligatorio.'; isValid = false; }
-    else if (!/\S+@\S+\.\S+/.test(formData.email)) { newErrors.email = 'Formato de email inválido.'; isValid = false; }
-    if (!formData.message.trim()) { newErrors.message = 'El mensaje es obligatorio.'; isValid = false; }
+    if (!formData.name.trim()) { newErrors.name = t.contact.errorNameRequired; isValid = false; }
+    if (!formData.email.trim()) { newErrors.email = t.contact.errorEmailRequired; isValid = false; }
+    else if (!/\S+@\S+\.\S+/.test(formData.email)) { newErrors.email = t.contact.errorEmailInvalid; isValid = false; }
+    if (!formData.message.trim()) { newErrors.message = t.contact.errorMessageRequired; isValid = false; }
     setErrors(newErrors);
     return isValid;
   };
@@ -47,7 +49,6 @@ const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-    // Production: integrate with a form backend (Formspree, EmailJS, etc.)
     setStatus('success');
     setFormData({ name: '', email: '', message: '' });
     setErrors({ name: '', email: '', message: '' });
@@ -60,26 +61,24 @@ const Contact: React.FC = () => {
   return (
     <section id="contacto" className="py-24 bg-white">
       <div className="container mx-auto px-6">
-        {/* Header */}
         <div className="max-w-2xl mb-14">
-          <p className="text-sm font-semibold tracking-widest uppercase text-[#6a9a10] mb-3">Contacto</p>
+          <p className="text-sm font-semibold tracking-widest uppercase text-[#6a9a10] mb-3">{t.contact.eyebrow}</p>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-            ¿Tiene un proyecto en mente?
+            {t.contact.heading}
           </h2>
           <p className="mt-4 text-gray-500 leading-relaxed">
-            Cuéntenos su proyecto. Nuestro equipo técnico analizará su necesidad y le responderá a la brevedad.
+            {t.contact.subheading}
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl">
-          {/* Contact info */}
           <div className="space-y-8">
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#6a9a10]/10 text-[#6a9a10] flex items-center justify-center">
                 <PhoneIcon />
               </div>
               <div>
-                <p className="font-semibold text-gray-900 text-sm mb-0.5">Teléfonos</p>
+                <p className="font-semibold text-gray-900 text-sm mb-0.5">{t.contact.phoneLabel}</p>
                 <p className="text-gray-500 text-sm">+(57) 1 467.2384 — 467.2385</p>
               </div>
             </div>
@@ -88,7 +87,7 @@ const Contact: React.FC = () => {
                 <EmailIcon />
               </div>
               <div>
-                <p className="font-semibold text-gray-900 text-sm mb-0.5">Correo electrónico</p>
+                <p className="font-semibold text-gray-900 text-sm mb-0.5">{t.contact.emailLabel}</p>
                 <a href="mailto:info@ingecon.com.co" className="text-[#6a9a10] hover:underline text-sm">
                   info@ingecon.com.co
                 </a>
@@ -99,12 +98,11 @@ const Contact: React.FC = () => {
                 <LocationIcon />
               </div>
               <div>
-                <p className="font-semibold text-gray-900 text-sm mb-0.5">Dirección</p>
+                <p className="font-semibold text-gray-900 text-sm mb-0.5">{t.contact.addressLabel}</p>
                 <p className="text-gray-500 text-sm">Calle 148 No. 7G-42, Barrio Cedritos<br />Bogotá, Colombia</p>
               </div>
             </div>
 
-            {/* Map */}
             <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm mt-4">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.223933276813!2d-74.03212808573756!3d4.731778942621434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f8f7b1c3e3a4f%3A0x6a0c5c8d6d84a566!2sCl.%20148%20%237g-42%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1683226786183!5m2!1ses!2sco"
@@ -114,12 +112,11 @@ const Contact: React.FC = () => {
                 allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Ubicación de Ingecon S.A.S."
+                title={t.contact.mapTitle}
               />
             </div>
           </div>
 
-          {/* Form */}
           <div>
             {status === 'success' ? (
               <div className="flex flex-col items-center justify-center h-full text-center py-16 px-6 bg-gray-50 rounded-xl border border-gray-100">
@@ -128,23 +125,23 @@ const Contact: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Mensaje enviado</h3>
-                <p className="text-gray-500 text-sm mb-6">Le responderemos a la brevedad posible.</p>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{t.contact.successTitle}</h3>
+                <p className="text-gray-500 text-sm mb-6">{t.contact.successText}</p>
                 <button
                   onClick={() => setStatus('idle')}
                   className="text-sm text-[#6a9a10] hover:underline"
                 >
-                  Enviar otro mensaje
+                  {t.contact.successAnother}
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} noValidate className="space-y-5">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Nombre completo</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">{t.contact.formName}</label>
                   <input
                     type="text"
                     name="name"
-                    placeholder="Su nombre"
+                    placeholder={t.contact.formNamePlaceholder}
                     value={formData.name}
                     onChange={handleChange}
                     className={`${inputBase} ${errors.name ? inputError : inputIdle}`}
@@ -152,11 +149,11 @@ const Contact: React.FC = () => {
                   {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Correo electrónico</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">{t.contact.formEmail}</label>
                   <input
                     type="email"
                     name="email"
-                    placeholder="su@email.com"
+                    placeholder={t.contact.formEmailPlaceholder}
                     value={formData.email}
                     onChange={handleChange}
                     className={`${inputBase} ${errors.email ? inputError : inputIdle}`}
@@ -164,10 +161,10 @@ const Contact: React.FC = () => {
                   {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Mensaje</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">{t.contact.formMessage}</label>
                   <textarea
                     name="message"
-                    placeholder="Describa brevemente su proyecto o consulta..."
+                    placeholder={t.contact.formMessagePlaceholder}
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
@@ -179,7 +176,7 @@ const Contact: React.FC = () => {
                   type="submit"
                   className="w-full bg-[#6a9a10] hover:bg-[#5a8509] text-white font-semibold py-3.5 px-6 rounded-lg text-sm transition-all duration-200 shadow-sm hover:shadow"
                 >
-                  Enviar mensaje
+                  {t.contact.formSubmit}
                 </button>
               </form>
             )}

@@ -1,11 +1,22 @@
 import React from 'react';
+import { useTranslation } from '../i18n';
 
 interface FooterProps {
   setPage: (page: string) => void;
 }
 
 const Footer: React.FC<FooterProps> = ({ setPage }) => {
+  const { t } = useTranslation();
   const logoSrc = `${import.meta.env.BASE_URL}images/logo-ingecon-CUG5jr9Z.webp`;
+
+  const links = [
+    { href: '#inicio', label: t.nav.inicio },
+    { href: '#nosotros', label: t.nav.nosotros },
+    { href: '#servicios', label: t.nav.servicios },
+    { href: '#proyectos', label: t.nav.proyectos },
+    { href: '#contacto', label: t.nav.contacto },
+    { href: '#politica-de-datos', label: t.nav.politicaDatos },
+  ];
 
   const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     event.preventDefault();
@@ -31,32 +42,21 @@ const Footer: React.FC<FooterProps> = ({ setPage }) => {
     setTimeout(scrollToTarget, 100);
   };
 
-  const links = [
-    { href: '#inicio', label: 'Inicio' },
-    { href: '#nosotros', label: 'Nosotros' },
-    { href: '#servicios', label: 'Servicios' },
-    { href: '#proyectos', label: 'Proyectos' },
-    { href: '#contacto', label: 'Contacto' },
-    { href: '#politica-de-datos', label: 'Política de Datos' },
-  ];
-
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-6 pt-14 pb-8">
         <div className="grid md:grid-cols-3 gap-10 mb-12">
-          {/* Brand */}
           <div>
             <a href="#inicio" onClick={(e) => handleNavClick(e, '#inicio')} className="inline-block mb-4">
-              <img src={logoSrc} alt="Ingecon S.A.S." className="h-10 w-auto" />
+              <img src={logoSrc} alt="Ingecon S.A.S." className="h-16 w-auto" />
             </a>
             <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
-              Ingeniería y Consultoría INGECON S.A.S. — Más de 45 años respaldando proyectos de infraestructura pública en Colombia.
+              {t.footer.description}
             </p>
           </div>
 
-          {/* Quick links */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-5 tracking-wide">Navegación</h4>
+            <h4 className="text-white font-semibold text-sm mb-5 tracking-wide">{t.footer.navTitle}</h4>
             <ul className="space-y-2.5">
               {links.map((link) => (
                 <li key={link.href}>
@@ -72,9 +72,8 @@ const Footer: React.FC<FooterProps> = ({ setPage }) => {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-5 tracking-wide">Contacto</h4>
+            <h4 className="text-white font-semibold text-sm mb-5 tracking-wide">{t.footer.contactTitle}</h4>
             <ul className="space-y-2.5 text-sm text-gray-400">
               <li>+(57) 1 467.2384 — 467.2385</li>
               <li>
@@ -90,7 +89,7 @@ const Footer: React.FC<FooterProps> = ({ setPage }) => {
         </div>
 
         <div className="pt-6 border-t border-gray-800 text-center text-xs text-gray-500">
-          © {new Date().getFullYear()} Ingeniería y Consultoría INGECON S.A.S. Todos los derechos reservados.
+          &copy; {new Date().getFullYear()} {t.footer.copyright}
         </div>
       </div>
     </footer>
