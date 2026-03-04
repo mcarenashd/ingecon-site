@@ -14,7 +14,7 @@ const es = {
     eyebrow: 'Más de 45 años de trayectoria en Colombia',
     headlineMain: 'Interventoría e Ingeniería',
     headlineAccent: 'con respaldo institucional.',
-    subheadline: 'Garantizamos el cumplimiento técnico, financiero y ambiental de cada proyecto. Desde 1978, construyendo confianza con las principales entidades públicas del país.',
+    subheadline: 'Garantizamos el cumplimiento técnico, financiero, ambiental, social y jurídico de cada proyecto. Desde 1978, construyendo confianza con las principales entidades públicas del país.',
     ctaPrimary: 'Hablemos de su proyecto',
     ctaSecondary: 'Ver trayectoria',
     statYears: 'Años de experiencia',

@@ -16,7 +16,7 @@ const en: Translations = {
     eyebrow: 'Over 45 years of experience in Colombia',
     headlineMain: 'Engineering & Oversight',
     headlineAccent: 'with institutional backing.',
-    subheadline: 'We ensure the technical, financial, and environmental compliance of every project. Since 1978, building trust with the country\'s leading public entities.',
+    subheadline: 'We ensure the technical, financial, environmental, social, and legal compliance of every project. Since 1978, building trust with the country\'s leading public entities.',
     ctaPrimary: 'Let\'s talk about your project',
     ctaSecondary: 'View our track record',
     statYears: 'Years of experience',
