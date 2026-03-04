@@ -123,7 +123,7 @@ const en: Translations = {
     s1Title: '1. INTRODUCTION',
     s1Text: 'In compliance with Law 1581 of 2012, which establishes general provisions for the protection of personal data, INGENIERIA Y CONSULTORIA INGECON S.A. established this policy in order to clearly implement the procedures and treatment of personal data of any information related to the collection, updating, classification, and circulation of personal data of its employees, former employees, specialists, suppliers, clients, and third parties.',
     s2Title: '2. DATA CONTROLLER',
-    s2Text1: 'INGENIERIA Y CONSULTORIA INGECON S.A.S is a simplified joint stock company legally incorporated, identified with Tax ID 810.002.747-0, headquartered in Bogotá – Colombia at Calle 148 No. 7G-42, phone 4672384 - 4672385, email ',
+    s2Text1: 'INGENIERIA Y CONSULTORIA INGECON S.A.S is a simplified joint stock company legally incorporated, identified with Tax ID 810.002.747-0, headquartered in Bogotá – Colombia at Calle 148 No. 7G-42, phone 3174347113, email ',
     s2Email: 'info@ingecon.com.co',
     s2Text2: 'INGECON SAS will establish the necessary mechanisms to inform data subjects about personal data protection policies, as well as the corresponding processes for updating, rectifying, or deleting their data from its databases.',
     s3Title: '3. SCOPE',

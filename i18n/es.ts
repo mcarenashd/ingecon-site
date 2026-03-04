@@ -121,7 +121,7 @@ const es = {
     s1Title: '1. INTRODUCCIÓN',
     s1Text: 'En cumplimiento de la ley 1581 de 2012, por la cual se dictan disposiciones generales para la protección de datos personales, INGENIERIA Y CONSULTORIA INGECON S.A. estableció esta política con el fin de implementar claramente el procedimiento y tratamiento de datos personales de cualquier información relacionada con la recolección, actualización, clasificación y circulación de los datos personales de sus empleados, exempleados, especialistas, proveedores, clientes y terceros.',
     s2Title: '2. RESPONSABLE DE LA INFORMACIÓN',
-    s2Text1: 'INGENIERIA Y CONSULTORIA INGECON S.A.S es una sociedad anónima simplificada legalmente constituida, identificada con NIT 810.002.747-0, su domicilio principal en Bogotá – Colombia en calle 148 no 7G - 42, teléfono 4672384 - 4672385, su correo electrónico ',
+    s2Text1: 'INGENIERIA Y CONSULTORIA INGECON S.A.S es una sociedad anónima simplificada legalmente constituida, identificada con NIT 810.002.747-0, su domicilio principal en Bogotá – Colombia en calle 148 no 7G - 42, teléfono 3174347113, su correo electrónico ',
     s2Email: 'info@ingecon.com.co',
     s2Text2: 'INGECON SAS establecerá los mecanismos necesarios para hacerle saber al titular de la información, acerca de las políticas de protección de datos personales, así mismo los procesos correspondientes para actualización, rectificación o eliminación de los mismos en sus bases de datos.',
     s3Title: '3. ALCANCE',

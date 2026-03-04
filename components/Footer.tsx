@@ -82,7 +82,7 @@ const Footer: React.FC<FooterProps> = ({ setPage }) => {
           <div>
             <h4 className="text-white font-semibold text-sm mb-5 tracking-wide">{t.footer.contactTitle}</h4>
             <ul className="space-y-2.5 text-sm text-gray-400">
-              <li>+(57) 1 467.2384 — 467.2385</li>
+              <li>+(57) 317 434 7113</li>
               <li>
                 <a href="mailto:info@ingecon.com.co" className="hover:text-white transition-colors">
                   info@ingecon.com.co
