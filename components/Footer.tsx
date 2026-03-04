@@ -18,57 +18,79 @@ const Footer: React.FC<FooterProps> = ({ setPage }) => {
     }
 
     const scrollToTarget = () => {
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        const headerOffset = document.querySelector('header')?.offsetHeight || 80;
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      const el = document.getElementById(targetId);
+      if (el) {
+        const headerOffset = document.querySelector('header')?.offsetHeight || 72;
+        window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - headerOffset, behavior: 'smooth' });
       } else if (targetId === 'inicio') {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     };
-    
+
     setPage('home');
     setTimeout(scrollToTarget, 100);
   };
 
+  const links = [
+    { href: '#inicio', label: 'Inicio' },
+    { href: '#nosotros', label: 'Nosotros' },
+    { href: '#servicios', label: 'Servicios' },
+    { href: '#proyectos', label: 'Proyectos' },
+    { href: '#contacto', label: 'Contacto' },
+    { href: '#politica-de-datos', label: 'Política de Datos' },
+  ];
+
   return (
-    <footer className="bg-[#809419] text-white pt-16 pb-8 px-6">
-      <div className="container mx-auto">
-        <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
-          {/* About Section */}
-          <div className="mb-6 md:mb-0">
-            <a href="#inicio" onClick={(e) => handleNavClick(e, '#inicio')} className="inline-block mb-4 cursor-pointer">
-              <img src={logoSrc} alt="Ingecon Logo" className="h-12 w-auto" />
+    <footer className="bg-gray-900 text-gray-300">
+      <div className="container mx-auto px-6 pt-14 pb-8">
+        <div className="grid md:grid-cols-3 gap-10 mb-12">
+          {/* Brand */}
+          <div>
+            <a href="#inicio" onClick={(e) => handleNavClick(e, '#inicio')} className="inline-block mb-4">
+              <img src={logoSrc} alt="Ingecon S.A.S." className="h-10 w-auto" />
             </a>
-            <p className="text-gray-200">Convirtiendo ideas en estructuras sólidas con experiencia y dedicación.</p>
+            <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
+              Ingeniería y Consultoría INGECON S.A.S. — Más de 45 años respaldando proyectos de infraestructura pública en Colombia.
+            </p>
           </div>
-          
-          {/* Quick Links */}
-          <div className="mb-6 md:mb-0">
-            <h4 className="text-xl font-bold mb-4">Enlaces Rápidos</h4>
-            <ul className="space-y-2">
-              <li><a href="#inicio" onClick={(e) => handleNavClick(e, '#inicio')} className="text-gray-200 hover:text-white cursor-pointer">Inicio</a></li>
-              <li><a href="#servicios" onClick={(e) => handleNavClick(e, '#servicios')} className="text-gray-200 hover:text-white cursor-pointer">Servicios</a></li>
-              <li><a href="#proyectos" onClick={(e) => handleNavClick(e, '#proyectos')} className="text-gray-200 hover:text-white cursor-pointer">Proyectos</a></li>
-              <li><a href="#contacto" onClick={(e) => handleNavClick(e, '#contacto')} className="text-gray-200 hover:text-white cursor-pointer">Contacto</a></li>
-              <li><a href="#politica-de-datos" onClick={(e) => handleNavClick(e, '#politica-de-datos')} className="text-gray-200 hover:text-white cursor-pointer">Política de Datos</a></li>
+
+          {/* Quick links */}
+          <div>
+            <h4 className="text-white font-semibold text-sm mb-5 tracking-wide">Navegación</h4>
+            <ul className="space-y-2.5">
+              {links.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    onClick={(e) => handleNavClick(e, link.href)}
+                    className="text-sm text-gray-400 hover:text-white transition-colors duration-200"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact */}
           <div>
-            <h4 className="text-xl font-bold mb-4">Contacto</h4>
-            <ul className="space-y-2 text-gray-200">
-                <li>Teléfonos: +(57) 1 467.2384 - 467.2385</li>
-                <li>Email: <a href="mailto:info@ingecon.com.co" className="hover:text-white">info@ingecon.com.co</a></li>
-                <li>Calle 148 No. 7G-42 Barrio Cedritos, Bogotá, Colombia</li>
+            <h4 className="text-white font-semibold text-sm mb-5 tracking-wide">Contacto</h4>
+            <ul className="space-y-2.5 text-sm text-gray-400">
+              <li>+(57) 1 467.2384 — 467.2385</li>
+              <li>
+                <a href="mailto:info@ingecon.com.co" className="hover:text-white transition-colors">
+                  info@ingecon.com.co
+                </a>
+              </li>
+              <li className="leading-relaxed">
+                Calle 148 No. 7G-42, Barrio Cedritos<br />Bogotá, Colombia
+              </li>
             </ul>
           </div>
         </div>
-        <div className="text-center text-gray-300 mt-12 pt-6 border-t border-white/20">
-          <p>&copy; {new Date().getFullYear()} Ingecon S.A.S. Todos los derechos reservados.</p>
+
+        <div className="pt-6 border-t border-gray-800 text-center text-xs text-gray-500">
+          © {new Date().getFullYear()} Ingeniería y Consultoría INGECON S.A.S. Todos los derechos reservados.
         </div>
       </div>
     </footer>

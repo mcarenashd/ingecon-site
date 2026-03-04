@@ -11,11 +11,10 @@ const Header: React.FC<HeaderProps> = ({ setPage, currentPage }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const logoSrc = `${import.meta.env.BASE_URL}images/logo-ingecon-CUG5jr9Z.png`;
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      // Activate solid header only after scrolling past ~80% of the viewport height (past the hero)
+      setIsScrolled(window.scrollY > window.innerHeight * 0.8);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -24,27 +23,23 @@ const Header: React.FC<HeaderProps> = ({ setPage, currentPage }) => {
   const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     event.preventDefault();
     const targetId = href.substring(1);
-
-    if (isOpen) {
-      setIsOpen(false);
-    }
+    if (isOpen) setIsOpen(false);
 
     if (targetId === 'politica-de-datos') {
       setPage('policy');
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
-    
+
     const scrollToTarget = () => {
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-            const headerOffset = document.querySelector('header')?.offsetHeight || 80;
-            const elementPosition = targetElement.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-        } else if (targetId === 'inicio') {
-             window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        const headerOffset = document.querySelector('header')?.offsetHeight || 72;
+        const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      } else if (targetId === 'inicio') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     };
 
     if (currentPage !== 'home') {
@@ -56,55 +51,80 @@ const Header: React.FC<HeaderProps> = ({ setPage, currentPage }) => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/30 backdrop-blur-sm' : 'bg-transparent'}`}>
-      <div className="container mx-auto px-6 py-3">
-        <div className="flex justify-between items-center">
-          <a href="#inicio" onClick={(e) => handleNavClick(e, '#inicio')} className="text-2xl font-bold">
-            <img src={logoSrc} alt="Ingecon Logo" className="h-20 w-auto" />
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-white border-b border-gray-100'
+          : 'bg-transparent'
+      }`}
+    >
+      <div className="container mx-auto px-6">
+        <div className="flex justify-between items-center h-20">
+          {/* Logo */}
+          <a href="#inicio" onClick={(e) => handleNavClick(e, '#inicio')} className="flex-shrink-0">
+            <img src={logoSrc} alt="Ingecon S.A.S." className="h-14 w-auto drop-shadow-md" />
           </a>
-          
-          <nav className="hidden md:flex space-x-8">
-            {NAV_LINKS.map(link => (
-              <a 
-                key={link.href} 
-                href={link.href} 
+
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center space-x-1">
+            {NAV_LINKS.filter(l => l.href !== '#politica-de-datos').map(link => (
+              <a
+                key={link.href}
+                href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-white hover:text-[#7cb342] transition-colors duration-300 font-medium cursor-pointer drop-shadow-md"
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                  isScrolled
+                    ? 'text-gray-700 hover:text-[#6a9a10] hover:bg-gray-50'
+                    : 'text-white/90 hover:text-white hover:bg-white/10'
+                }`}
               >
                 {link.label}
               </a>
             ))}
+            <a
+              href="#contacto"
+              onClick={(e) => handleNavClick(e, '#contacto')}
+              className="ml-4 px-5 py-2 rounded-lg bg-[#6a9a10] hover:bg-[#5a8509] text-white text-sm font-semibold transition-all duration-200 shadow-sm hover:shadow"
+            >
+              Contáctenos
+            </a>
           </nav>
 
-          <div className="md:hidden">
-            <button onClick={toggleMenu} className="text-white focus:outline-none z-[1001]">
-              <div className="w-6 h-6 flex flex-col justify-around">
-                <span className={`block w-full h-0.5 ${isOpen ? 'bg-gray-800' : 'bg-white'} transition-transform duration-300 ${isOpen ? 'transform rotate-45 translate-y-[5px]' : ''}`}></span>
-                <span className={`block w-full h-0.5 ${isOpen ? 'bg-gray-800' : 'bg-white'} transition-opacity duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
-                <span className={`block w-full h-0.5 ${isOpen ? 'bg-gray-800' : 'bg-white'} transition-transform duration-300 ${isOpen ? 'transform -rotate-45 -translate-y-[5px]' : ''}`}></span>
-              </div>
-            </button>
-          </div>
+          {/* Mobile hamburger */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className={`md:hidden p-2 rounded-md transition-colors ${isScrolled ? 'text-gray-700' : 'text-white'}`}
+            aria-label="Abrir menú"
+          >
+            <span className={`block w-5 h-0.5 mb-1 transition-transform duration-300 ${isScrolled ? 'bg-gray-700' : 'bg-white'} ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
+            <span className={`block w-5 h-0.5 mb-1 transition-opacity duration-300 ${isScrolled ? 'bg-gray-700' : 'bg-white'} ${isOpen ? 'opacity-0' : ''}`} />
+            <span className={`block w-5 h-0.5 transition-transform duration-300 ${isScrolled ? 'bg-gray-700' : 'bg-white'} ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
+          </button>
         </div>
+      </div>
 
-        {/* Mobile Navigation */}
-        <div className={`md:hidden absolute top-0 left-0 w-full h-screen bg-white transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-          <nav className="flex flex-col items-center justify-center h-full">
-            <ul className="flex flex-col items-center space-y-8">
-              {NAV_LINKS.map(link => (
-                <li key={link.href}>
-                  <a 
-                    href={link.href} 
-                    onClick={(e) => handleNavClick(e, link.href)} 
-                    className="text-gray-800 hover:text-[#7cb342] transition-colors duration-300 font-medium text-2xl cursor-pointer"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
+      {/* Mobile menu */}
+      <div
+        className={`md:hidden absolute top-full left-0 right-0 border-t transition-all duration-300 overflow-hidden ${
+          isScrolled ? 'bg-white border-gray-100' : 'bg-gray-900/95 backdrop-blur-md border-white/10'
+        } ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}
+      >
+        <nav className="px-6 py-4 flex flex-col space-y-1">
+          {NAV_LINKS.map(link => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
+              className={`px-4 py-3 rounded-lg font-medium transition-colors ${
+                isScrolled
+                  ? 'text-gray-700 hover:text-[#6a9a10] hover:bg-gray-50'
+                  : 'text-white/80 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
       </div>
     </header>
   );
