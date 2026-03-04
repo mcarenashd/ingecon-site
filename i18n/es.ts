@@ -6,6 +6,7 @@ const es = {
     proyectos: 'Proyectos',
     contacto: 'Contacto',
     politicaDatos: 'Política de Datos',
+    carreras: 'Trabaja con nosotros',
     openMenu: 'Abrir menú',
   },
 
@@ -176,6 +177,27 @@ const es = {
     s11Text: 'INGECON SAS está comprometido en efectuar un correcto uso y tratamiento de los datos personales contenidos en sus bases de datos, evitando el acceso no autorizado a terceros que puedan conocer o vulnerar, modificar, divulgar y/o destruir la información que allí reposa.',
     s12Title: '12. VIGENCIA DE LA POLÍTICA',
     s12Text: 'La presente política de tratamiento de datos personales rige a partir del 1 de Junio de 2017.',
+  },
+
+  careers: {
+    eyebrow: 'Únete al equipo',
+    heading: 'Trabaja con nosotros',
+    subheading: 'Buscamos profesionales comprometidos con la excelencia en ingeniería. Conoce nuestras vacantes actuales.',
+    locationLabel: 'Ubicación',
+    contractLabel: 'Contrato',
+    experienceLabel: 'Experiencia',
+    requirementsTitle: 'Requisitos',
+    benefitsTitle: 'Beneficios',
+    apply: 'Aplicar a esta vacante',
+    applySubject: '[Vacante]',
+    noVacanciesTitle: 'No hay vacantes abiertas',
+    noVacanciesText: 'No tenemos vacantes disponibles en este momento, pero siempre estamos buscando talento. Envíanos tu hoja de vida y te contactaremos cuando surja una oportunidad.',
+    sendCV: 'Enviar hoja de vida',
+    sendCVSubject: 'Hoja de vida - Candidatura espontánea',
+    loading: 'Cargando vacantes...',
+    errorLoading: 'No se pudieron cargar las vacantes. Intente más tarde.',
+    viewDetails: 'Ver detalles',
+    hideDetails: 'Ocultar detalles',
   },
 } as const;
 

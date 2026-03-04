@@ -6,6 +6,7 @@ import About from './components/About';
 import Services from './components/Services';
 import Projects from './components/Projects';
 import Clients from './components/Clients';
+import Careers from './components/Careers';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import DataPolicy from './components/DataPolicy';
@@ -27,6 +28,8 @@ const App: React.FC = () => {
               <Clients />
               <Contact />
             </>
+          ) : page === 'careers' ? (
+            <Careers />
           ) : (
             <DataPolicy />
           )}

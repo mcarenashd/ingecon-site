@@ -8,6 +8,7 @@ const en: Translations = {
     proyectos: 'Projects',
     contacto: 'Contact',
     politicaDatos: 'Data Policy',
+    carreras: 'Careers',
     openMenu: 'Open menu',
   },
 
@@ -178,6 +179,27 @@ const en: Translations = {
     s11Text: 'INGECON SAS is committed to the correct use and processing of personal data contained in its databases, preventing unauthorized access by third parties who may know, violate, modify, disclose, and/or destroy the information stored therein.',
     s12Title: '12. POLICY VALIDITY',
     s12Text: 'This personal data processing policy is effective as of June 1, 2017.',
+  },
+
+  careers: {
+    eyebrow: 'Join our team',
+    heading: 'Work with us',
+    subheading: 'We are looking for professionals committed to engineering excellence. Check out our current openings.',
+    locationLabel: 'Location',
+    contractLabel: 'Contract',
+    experienceLabel: 'Experience',
+    requirementsTitle: 'Requirements',
+    benefitsTitle: 'Benefits',
+    apply: 'Apply for this position',
+    applySubject: '[Job Opening]',
+    noVacanciesTitle: 'No open positions',
+    noVacanciesText: 'We don\'t have any openings right now, but we\'re always looking for talent. Send us your resume and we\'ll reach out when an opportunity arises.',
+    sendCV: 'Send your resume',
+    sendCVSubject: 'Resume - Spontaneous application',
+    loading: 'Loading positions...',
+    errorLoading: 'Could not load positions. Please try again later.',
+    viewDetails: 'View details',
+    hideDetails: 'Hide details',
   },
 } as const;
 

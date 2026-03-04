@@ -18,6 +18,7 @@ const Header: React.FC<HeaderProps> = ({ setPage, currentPage }) => {
     { href: '#servicios', label: t.nav.servicios },
     { href: '#proyectos', label: t.nav.proyectos },
     { href: '#contacto', label: t.nav.contacto },
+    { href: '#carreras', label: t.nav.carreras },
   ];
 
   const allLinks = [...navLinks, { href: '#politica-de-datos', label: t.nav.politicaDatos }];
@@ -37,6 +38,12 @@ const Header: React.FC<HeaderProps> = ({ setPage, currentPage }) => {
 
     if (targetId === 'politica-de-datos') {
       setPage('policy');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (targetId === 'carreras') {
+      setPage('careers');
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
