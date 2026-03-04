@@ -8,7 +8,7 @@ import { useTranslation } from '../i18n';
 // 3. Publica la hoja: Archivo > Compartir > Publicar en la web > CSV
 // 4. Pega la URL aquí abajo
 // ──────────────────────────────────────────────
-const SHEET_CSV_URL = '';
+const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSsDWU9tIubUeHZauE3bhDnsvPnfSrM6wvZLqb_AFv_3GdJ6DLSD5JgTOieI7Lgtv0755jPCXnVytQ2/pub?gid=0&single=true&output=csv';
 
 interface Vacancy {
   titulo: string;
