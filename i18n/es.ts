@@ -11,10 +11,10 @@ const es = {
   },
 
   hero: {
-    eyebrow: 'Más de 45 años de trayectoria en Colombia',
+    eyebrow: 'Más de 25 años de trayectoria en Colombia',
     headlineMain: 'Interventoría e Ingeniería',
     headlineAccent: 'con respaldo institucional.',
-    subheadline: 'Garantizamos el cumplimiento técnico, financiero, ambiental, social y jurídico de cada proyecto. Desde 1978, construyendo confianza con las principales entidades públicas del país.',
+    subheadline: 'Garantizamos el cumplimiento técnico, financiero, ambiental, social y jurídico de cada proyecto. Desde 2001, construyendo confianza con las principales entidades públicas del país.',
     ctaPrimary: 'Hablemos de su proyecto',
     ctaSecondary: 'Ver trayectoria',
     statYears: 'Años de experiencia',
@@ -30,7 +30,7 @@ const es = {
     statFounded: 'Año de fundación',
     eyebrow: 'Quiénes somos',
     heading: 'Una firma con historial comprobado en infraestructura pública.',
-    descriptionBefore: 'Somos una organización dedicada a la Interventoría, Consultoría y Gerencia. La Empresa nació en el año de 1.978 con el nombre de Ingenierías Ltda.; a partir de Agosto de 1.998 cambió su razón social a INGECON S.A. y a partir del 5 de Septiembre de 2012 cambió su razón social a ',
+    descriptionBefore: 'Somos una organización dedicada a la Interventoría, Consultoría y Gerencia. La Empresa nació en el año 2001 con el nombre de Ingenierías Ltda.; a partir de Agosto de 1.998 cambió su razón social a INGECON S.A. y a partir del 5 de Septiembre de 2012 cambió su razón social a ',
     descriptionBold: 'INGENIERÍA Y CONSULTORÍA INGECON S.A.S',
     descriptionAfter: '.',
     missionTitle: 'Nuestra Misión',
@@ -74,11 +74,9 @@ const es = {
     loadMore: 'Ver más proyectos',
     remaining: 'restantes',
     catAll: 'Todos',
-    catViales: 'Obras Viales',
+    catCiviles: 'Interventoría a obras civiles (vías, espacio público, aeropuertos, concesiones, edificaciones, saneamiento básico)',
     catEstudios: 'Estudios y Diseños',
-    catCiviles: 'Obras Civiles',
     catEstudiosInt: 'Estudios y Diseños (Interventoría)',
-    catGerencias: 'Interventorías y Gerencias',
   },
 
   clients: {
@@ -112,7 +110,7 @@ const es = {
   },
 
   footer: {
-    description: 'Ingeniería y Consultoría INGECON S.A.S. — Más de 45 años respaldando proyectos de infraestructura pública en Colombia.',
+    description: 'Ingeniería y Consultoría INGECON S.A.S. — Más de 25 años respaldando proyectos de infraestructura pública en Colombia.',
     navTitle: 'Navegación',
     contactTitle: 'Contacto',
     copyright: 'Ingeniería y Consultoría INGECON S.A.S. Todos los derechos reservados.',

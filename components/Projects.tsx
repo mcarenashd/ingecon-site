@@ -30,11 +30,9 @@ const Projects: React.FC = () => {
 
   const CATEGORIES = [
     { label: t.projects.catAll, value: 'Todos' },
-    { label: t.projects.catViales, value: 'Interventoría de obras Viales' },
+    { label: t.projects.catCiviles, value: 'Interventoría a obras civiles' },
     { label: t.projects.catEstudios, value: 'Estudios y Diseños' },
-    { label: t.projects.catCiviles, value: 'Interventoría y Mantenimiento de Obras Civiles' },
     { label: t.projects.catEstudiosInt, value: 'Interventoría en Estudios y Diseños' },
-    { label: t.projects.catGerencias, value: 'Interventorías y gerencias...' },
   ];
 
   useEffect(() => {

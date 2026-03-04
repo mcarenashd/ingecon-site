@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
 
         <div className="mt-16 grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto border-t border-white/20 pt-10">
           <div>
-            <p className="text-3xl md:text-4xl font-bold text-[#c5db5a]">45+</p>
+            <p className="text-3xl md:text-4xl font-bold text-[#c5db5a]">25+</p>
             <p className="text-sm md:text-base text-gray-300 mt-1">{t.hero.statYears}</p>
           </div>
           <div>

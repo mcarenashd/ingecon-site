@@ -6,10 +6,10 @@ const About: React.FC = () => {
   const aboutImage = `${import.meta.env.BASE_URL}images/about_ingecon_bogota.webp`;
 
   const stats = [
-    { value: '45+', label: t.about.statYears },
+    { value: '25+', label: t.about.statYears },
     { value: '77+', label: t.about.statContracts },
     { value: '10+', label: t.about.statClients },
-    { value: '1978', label: t.about.statFounded },
+    { value: '2001', label: t.about.statFounded },
   ];
 
   return (

@@ -13,10 +13,10 @@ const en: Translations = {
   },
 
   hero: {
-    eyebrow: 'Over 45 years of experience in Colombia',
+    eyebrow: 'Over 25 years of experience in Colombia',
     headlineMain: 'Engineering & Oversight',
     headlineAccent: 'with institutional backing.',
-    subheadline: 'We ensure the technical, financial, environmental, social, and legal compliance of every project. Since 1978, building trust with the country\'s leading public entities.',
+    subheadline: 'We ensure the technical, financial, environmental, social, and legal compliance of every project. Since 2001, building trust with the country\'s leading public entities.',
     ctaPrimary: 'Let\'s talk about your project',
     ctaSecondary: 'View our track record',
     statYears: 'Years of experience',
@@ -32,7 +32,7 @@ const en: Translations = {
     statFounded: 'Year founded',
     eyebrow: 'Who we are',
     heading: 'A firm with a proven track record in public infrastructure.',
-    descriptionBefore: 'We are an organization dedicated to Oversight, Consulting, and Management. The company was founded in 1978 under the name Ingenierías Ltda.; in August 1998 it changed its corporate name to INGECON S.A. and on September 5, 2012 it became ',
+    descriptionBefore: 'We are an organization dedicated to Oversight, Consulting, and Management. The company was founded in 2001 under the name Ingenierías Ltda.; in August 1998 it changed its corporate name to INGECON S.A. and on September 5, 2012 it became ',
     descriptionBold: 'INGENIERÍA Y CONSULTORÍA INGECON S.A.S',
     descriptionAfter: '.',
     missionTitle: 'Our Mission',
@@ -76,11 +76,9 @@ const en: Translations = {
     loadMore: 'Load more projects',
     remaining: 'remaining',
     catAll: 'All',
-    catViales: 'Road Works',
+    catCiviles: 'Oversight of civil works (roads, public space, airports, concessions, buildings, sanitation)',
     catEstudios: 'Studies & Designs',
-    catCiviles: 'Civil Works',
     catEstudiosInt: 'Studies & Designs (Oversight)',
-    catGerencias: 'Oversight & Management',
   },
 
   clients: {
@@ -114,7 +112,7 @@ const en: Translations = {
   },
 
   footer: {
-    description: 'Ingeniería y Consultoría INGECON S.A.S. — Over 45 years supporting public infrastructure projects in Colombia.',
+    description: 'Ingeniería y Consultoría INGECON S.A.S. — Over 25 years supporting public infrastructure projects in Colombia.',
     navTitle: 'Navigation',
     contactTitle: 'Contact',
     copyright: 'Ingeniería y Consultoría INGECON S.A.S. All rights reserved.',
