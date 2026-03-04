@@ -59,7 +59,7 @@ const es = {
       },
       {
         title: 'Servicios de Telecomunicaciones',
-        description: 'Supervisión técnica, administrativa y financiera de contratos de instalación, operación y mantenimiento de infraestructura de telecomunicaciones.',
+        description: 'Instalación, operación y mantenimiento de infraestructura de telecomunicaciones, con gestión técnica, administrativa y financiera integral.',
       },
     ],
   },

@@ -61,7 +61,7 @@ const en: Translations = {
       },
       {
         title: 'Telecommunications Services',
-        description: 'Technical, administrative, and financial supervision of contracts for the installation, operation, and maintenance of telecommunications infrastructure.',
+        description: 'Installation, operation, and maintenance of telecommunications infrastructure, with comprehensive technical, administrative, and financial management.',
       },
     ],
   },
