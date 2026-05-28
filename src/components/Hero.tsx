@@ -3,21 +3,32 @@ import { useTranslation } from '../i18n';
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
-  const heroBackground = `${import.meta.env.BASE_URL}images/calle-92-654YlBhL.webp`;
 
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden">
-      {/* LCP image — semantic <img> with fetchpriority for fastest first paint */}
-      <img
-        src={heroBackground}
-        alt=""
-        aria-hidden="true"
-        fetchPriority="high"
-        decoding="async"
-        className="absolute inset-0 w-full h-full object-cover"
-        width={1920}
-        height={1080}
-      />
+      {/* LCP image — responsive <picture> with AVIF + WebP fallback */}
+      <picture>
+        <source
+          type="image/avif"
+          srcSet="/images/hero-640.avif 640w, /images/hero-1024.avif 1024w, /images/hero-1600.avif 1600w"
+          sizes="100vw"
+        />
+        <source
+          type="image/webp"
+          srcSet="/images/hero-640.webp 640w, /images/hero-1024.webp 1024w, /images/hero-1600.webp 1600w"
+          sizes="100vw"
+        />
+        <img
+          src="/images/hero-1600.webp"
+          alt=""
+          aria-hidden="true"
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover"
+          width={1600}
+          height={814}
+        />
+      </picture>
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/65" />
 
