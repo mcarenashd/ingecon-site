@@ -1,6 +1,9 @@
 import React, { Suspense, useEffect, useRef, useState } from 'react';
 
 interface LazySectionProps {
+  /** Stable anchor id placed on the wrapper so in-page nav (href="#x") works
+   *  before the lazy child has mounted. */
+  id?: string;
   /** Estimated height of the section to reserve before mount, preventing CLS. */
   minHeight?: string;
   /** rootMargin for the IntersectionObserver — start loading early. */
@@ -31,6 +34,7 @@ const DefaultSkeleton: React.FC<{ minHeight?: string }> = ({ minHeight = '60vh' 
  * fetch and hydrate when the user actually approaches them.
  */
 const LazySection: React.FC<LazySectionProps> = ({
+  id,
   minHeight = '60vh',
   rootMargin = '300px',
   fallback,
@@ -61,7 +65,7 @@ const LazySection: React.FC<LazySectionProps> = ({
   }, [rootMargin]);
 
   return (
-    <div ref={ref} style={{ minHeight: inView ? undefined : minHeight }}>
+    <div id={id} ref={ref} style={{ minHeight: inView ? undefined : minHeight }}>
       {inView ? (
         <Suspense fallback={fallback ?? <DefaultSkeleton minHeight={minHeight} />}>
           {children}

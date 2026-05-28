@@ -18,11 +18,11 @@ const HomeApp: React.FC = () => (
       <Hero />
       <About />
       <Services />
-      <LazySection minHeight="80vh">
+      <LazySection id="proyectos" minHeight="80vh">
         <Projects />
       </LazySection>
       <Clients />
-      <LazySection minHeight="80vh">
+      <LazySection id="contacto" minHeight="80vh">
         <Contact />
       </LazySection>
     </main>

@@ -83,7 +83,7 @@ const Contact: React.FC = () => {
   const inputError = 'border-red-400 focus:border-red-400 focus:ring-red-200';
 
   return (
-    <section id="contacto" className="py-24 bg-white">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mb-14">
           <p className="text-sm font-semibold tracking-widest uppercase text-[#6a9a10] mb-3">{t.contact.eyebrow}</p>

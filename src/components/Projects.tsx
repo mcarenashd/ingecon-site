@@ -82,7 +82,7 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <section id="proyectos" className="py-24 bg-white">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="mb-10">
           <p className="text-sm font-semibold tracking-widest uppercase text-[#6a9a10] mb-3">
