@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { useTranslation } from '../i18n';
 
 // ──────────────────────────────────────────────
@@ -236,13 +235,21 @@ const Careers: React.FC = () => {
     })),
   } : null;
 
+  useEffect(() => {
+    if (!jobPostingSchema) return;
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'jobposting-schema';
+    script.textContent = JSON.stringify(jobPostingSchema);
+    document.head.appendChild(script);
+    return () => {
+      const existing = document.getElementById('jobposting-schema');
+      if (existing) existing.remove();
+    };
+  }, [jobPostingSchema]);
+
   return (
     <section id="carreras" className="py-24 bg-gray-50">
-      {jobPostingSchema && (
-        <Helmet>
-          <script type="application/ld+json">{JSON.stringify(jobPostingSchema)}</script>
-        </Helmet>
-      )}
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="max-w-2xl mb-14">

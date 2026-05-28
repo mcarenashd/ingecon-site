@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import App from '../components/App';
+
+const title = 'Página no encontrada | INGECON S.A.S.';
+const description = 'La página que buscas no existe. Vuelve al inicio o explora nuestros servicios e historial.';
+---
+
+<Layout title={title} description={description} path="/404" locale="es" noindex>
+  <App page="notfound" currentPath="/404" client:load />
+</Layout>

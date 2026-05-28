@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useTranslation } from '../i18n';
 
 const NotFound: React.FC = () => {
@@ -18,24 +17,24 @@ const NotFound: React.FC = () => {
           {t.notFound.description}
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-          <Link
-            to="/"
+          <a
+            href="/"
             className="inline-block bg-[#6a9a10] hover:bg-[#5a8509] text-white font-bold py-3.5 px-8 rounded-lg text-sm transition-colors duration-200 motion-reduce:transition-none shadow-sm hover:shadow"
           >
             {t.notFound.backHome}
-          </Link>
-          <Link
-            to="/#servicios"
+          </a>
+          <a
+            href="/#servicios"
             className="inline-block bg-white hover:bg-gray-100 text-gray-700 font-semibold py-3.5 px-8 rounded-lg text-sm border border-gray-200 hover:border-[#6a9a10] hover:text-[#6a9a10] transition-colors duration-200 motion-reduce:transition-none"
           >
             {t.notFound.exploreServices}
-          </Link>
-          <Link
-            to="/#proyectos"
+          </a>
+          <a
+            href="/#proyectos"
             className="inline-block bg-white hover:bg-gray-100 text-gray-700 font-semibold py-3.5 px-8 rounded-lg text-sm border border-gray-200 hover:border-[#6a9a10] hover:text-[#6a9a10] transition-colors duration-200 motion-reduce:transition-none"
           >
             {t.notFound.exploreProjects}
-          </Link>
+          </a>
         </div>
       </div>
     </section>

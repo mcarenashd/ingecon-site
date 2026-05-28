@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import App from '../components/App';
+
+const title = 'Trabaja con nosotros | INGECON S.A.S.';
+const description = 'Vacantes abiertas en INGECON S.A.S. Profesionales de ingeniería para proyectos de interventoría y consultoría en infraestructura pública en Colombia.';
+---
+
+<Layout title={title} description={description} path="/carreras" locale="es">
+  <App page="careers" currentPath="/carreras" client:load />
+</Layout>

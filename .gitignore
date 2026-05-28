@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# Astro
+.astro/
+
+# Vercel
+.vercel/
+
 # env files
 .env
 .env.local

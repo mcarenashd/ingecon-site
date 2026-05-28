@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import App from '../components/App';
+
+const title = 'Política de Protección de Datos | INGECON S.A.S.';
+const description = 'Política de tratamiento de datos personales de INGENIERÍA Y CONSULTORÍA INGECON S.A.S. en cumplimiento de la Ley 1581 de 2012.';
+---
+
+<Layout title={title} description={description} path="/politica-de-datos" locale="es" noindex>
+  <App page="policy" currentPath="/politica-de-datos" client:load />
+</Layout>

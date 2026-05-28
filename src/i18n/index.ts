@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useCallback, useMemo } from 'react';
+import React, { createContext, useContext, useState, useCallback, useMemo, useEffect } from 'react';
 import es from './es';
 import en from './en';
 import type { Translations } from './es';
@@ -15,21 +15,30 @@ const translations: Record<Locale, Translations> = { es, en };
 
 const LanguageContext = createContext<LanguageContextValue | undefined>(undefined);
 
+const isBrowser = typeof window !== 'undefined';
+
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [locale, setLocaleState] = useState<Locale>(() => {
+  // SSR-safe: server always renders with 'es'. Client hydrates and reads localStorage in effect.
+  const [locale, setLocaleState] = useState<Locale>('es');
+
+  useEffect(() => {
+    if (!isBrowser) return;
     const stored = localStorage.getItem('lang') as Locale | null;
-    return stored === 'en' ? 'en' : 'es';
-  });
+    if (stored === 'en') setLocaleState('en');
+  }, []);
+
+  useEffect(() => {
+    if (!isBrowser) return;
+    document.documentElement.lang = locale;
+  }, [locale]);
 
   const setLocale = useCallback((newLocale: Locale) => {
     setLocaleState(newLocale);
-    localStorage.setItem('lang', newLocale);
-    document.documentElement.lang = newLocale;
+    if (isBrowser) {
+      localStorage.setItem('lang', newLocale);
+      document.documentElement.lang = newLocale;
+    }
   }, []);
-
-  React.useEffect(() => {
-    document.documentElement.lang = locale;
-  }, [locale]);
 
   const value = useMemo(() => ({
     locale,

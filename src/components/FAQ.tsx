@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { useTranslation } from '../i18n';
 
 const ChevronIcon: React.FC<{ open: boolean }> = ({ open }) => (
@@ -19,28 +18,10 @@ const ChevronIcon: React.FC<{ open: boolean }> = ({ open }) => (
 const FAQ: React.FC = () => {
   const { t } = useTranslation();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
-
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    'mainEntity': t.faq.items.map((item) => ({
-      '@type': 'Question',
-      'name': item.question,
-      'acceptedAnswer': {
-        '@type': 'Answer',
-        'text': item.answer,
-      },
-    })),
-  };
-
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
     <section id="faq" className="py-24 bg-gray-50">
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
-
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mb-12">
           <p className="text-sm font-semibold tracking-widest uppercase text-[#6a9a10] mb-3">
