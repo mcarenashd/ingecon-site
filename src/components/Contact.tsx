@@ -140,7 +140,6 @@ const Contact: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setMapLoaded(true)}
-                  aria-label={t.contact.mapTitle}
                   className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col items-center justify-center gap-3 hover:from-gray-200 hover:to-gray-300 transition-colors group cursor-pointer"
                 >
                   <div className="w-12 h-12 rounded-full bg-[#6a9a10] text-white flex items-center justify-center shadow-md motion-safe:group-hover:scale-110 transition-transform motion-reduce:transition-none">

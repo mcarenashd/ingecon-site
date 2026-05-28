@@ -145,6 +145,9 @@ const organizationSchema = {
   <script type="application/ld+json" is:inline set:html={JSON.stringify(organizationSchema)} />
   {schema && <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />}
 
+  {/* Preload critical font (latin subset only) */}
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/open-sans-latin-wght-normal.woff2" crossorigin />
+
   {/* LCP hero image preload — AVIF responsive */}
   {path === '/' && (
     <link

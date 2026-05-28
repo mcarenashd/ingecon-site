@@ -14,8 +14,6 @@
     "@astrojs/sitemap": "^3.7.3",
     "@astrojs/vercel": "^10.0.7",
     "@emailjs/browser": "^4.4.1",
-    "@fontsource-variable/open-sans": "^5.2.7",
-    "@fontsource/roboto-slab": "^5.2.8",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "astro": "^6.3.8",

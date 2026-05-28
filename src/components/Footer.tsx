@@ -59,7 +59,7 @@ const Footer: React.FC<FooterProps> = ({ currentPath = '/' }) => {
           </div>
 
           <div>
-            <h4 className="text-white font-semibold text-sm mb-5 tracking-wide">{t.footer.navTitle}</h4>
+            <h3 className="text-white font-semibold text-sm mb-5 tracking-wide">{t.footer.navTitle}</h3>
             <ul className="space-y-2.5">
               {links.map((link) => (
                 <li key={link.label}>
@@ -76,7 +76,7 @@ const Footer: React.FC<FooterProps> = ({ currentPath = '/' }) => {
           </div>
 
           <div>
-            <h4 className="text-white font-semibold text-sm mb-5 tracking-wide">{t.footer.contactTitle}</h4>
+            <h3 className="text-white font-semibold text-sm mb-5 tracking-wide">{t.footer.contactTitle}</h3>
             <address className="not-italic">
               <ul className="space-y-2.5 text-sm text-gray-400">
                 <li>

@@ -3,7 +3,6 @@ import { useTranslation } from '../i18n';
 
 const About: React.FC = () => {
   const { t } = useTranslation();
-  const aboutImage = `${import.meta.env.BASE_URL}images/about_ingecon_bogota.webp`;
 
   const stats = [
     { value: '25+', label: t.about.statYears },
@@ -21,7 +20,7 @@ const About: React.FC = () => {
             {stats.map((stat) => (
               <div key={stat.label} className="py-8 px-6 text-center">
                 <p className="text-3xl md:text-4xl font-bold text-white">{stat.value}</p>
-                <p className="text-sm md:text-base text-white/80 mt-1">{stat.label}</p>
+                <p className="text-sm md:text-base text-white mt-1">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -34,11 +33,27 @@ const About: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* Image */}
             <div className="relative">
-              <img
-                src={aboutImage}
-                alt={t.about.imgAlt}
-                className="rounded-xl shadow-lg w-full h-auto object-cover"
-              />
+              <picture>
+                <source
+                  type="image/avif"
+                  srcSet="/images/about-400.avif 400w, /images/about-640.avif 640w, /images/about-960.avif 960w"
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                />
+                <source
+                  type="image/webp"
+                  srcSet="/images/about-400.webp 400w, /images/about-640.webp 640w, /images/about-960.webp 960w"
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                />
+                <img
+                  src="/images/about-640.webp"
+                  alt={t.about.imgAlt}
+                  loading="lazy"
+                  decoding="async"
+                  width={640}
+                  height={640}
+                  className="rounded-xl shadow-lg w-full h-auto object-cover"
+                />
+              </picture>
               <div className="absolute -bottom-5 -right-5 w-32 h-32 bg-[#6a9a10]/10 rounded-xl -z-10" />
             </div>
 
