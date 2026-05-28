@@ -10,15 +10,15 @@
     "typecheck": "astro check"
   },
   "dependencies": {
-    "@astrojs/react": "^5.0.5",
+    "@astrojs/react": "^5.0.6",
     "@astrojs/sitemap": "^3.7.3",
     "@astrojs/vercel": "^10.0.7",
     "@emailjs/browser": "^4.4.1",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "astro": "^6.3.8",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
