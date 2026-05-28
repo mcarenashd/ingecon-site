@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import App from '../components/App';
+import HomeApp from '../components/apps/HomeApp';
 import es from '../i18n/es';
 
 const SITE_URL = 'https://ingecon.com.co';
@@ -60,5 +60,5 @@ const homeSchema = {
 ---
 
 <Layout title={title} description={description} path="/" schema={homeSchema} locale="es">
-  <App page="home" currentPath="/" client:load />
+  <HomeApp client:load />
 </Layout>

@@ -80,8 +80,8 @@ const Footer: React.FC<FooterProps> = ({ currentPath = '/' }) => {
             <address className="not-italic">
               <ul className="space-y-2.5 text-sm text-gray-400">
                 <li>
-                  <a href="tel:+573174347113" className="hover:text-white transition-colors">
-                    +(57) 317 434 7113
+                  <a href="tel:+573233072588" className="hover:text-white transition-colors">
+                    +(57) 323 307 2588
                   </a>
                 </li>
                 <li>

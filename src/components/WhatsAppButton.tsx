@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from '../i18n';
 
-const PHONE = '573174347113';
+const PHONE = '573233072588';
 
 const WhatsAppButton: React.FC = () => {
   const { t } = useTranslation();
