@@ -45,7 +45,7 @@ const en: Translations = {
     statFounded: 'Year founded',
     eyebrow: 'Who we are',
     heading: 'A firm with a proven track record in public infrastructure.',
-    descriptionBefore: 'We are an organization dedicated to Oversight, Consulting and Management of public infrastructure projects. With more than four decades of experience in the sector, we operate today as ',
+    descriptionBefore: 'We are an organization dedicated to Oversight, Consulting and Management of public infrastructure projects. With more than 25 years of experience, we operate today as ',
     descriptionBold: 'INGENIERÍA Y CONSULTORÍA INGECON S.A.S.',
     descriptionAfter: ', backing projects for the country\'s leading public entities.',
     missionTitle: 'Our Mission',

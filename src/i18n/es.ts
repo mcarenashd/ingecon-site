@@ -43,7 +43,7 @@ const es = {
     statFounded: 'Año de fundación',
     eyebrow: 'Quiénes somos',
     heading: 'Una firma con historial comprobado en infraestructura pública.',
-    descriptionBefore: 'Somos una organización dedicada a la Interventoría, Consultoría y Gerencia de proyectos de infraestructura pública. Con más de cuatro décadas de trayectoria en el sector, hoy operamos bajo la razón social ',
+    descriptionBefore: 'Somos una organización dedicada a la Interventoría, Consultoría y Gerencia de proyectos de infraestructura pública. Con más de 25 años de trayectoria, hoy operamos bajo la razón social ',
     descriptionBold: 'INGENIERÍA Y CONSULTORÍA INGECON S.A.S.',
     descriptionAfter: ', respaldando proyectos de las principales entidades públicas del país.',
     missionTitle: 'Nuestra Misión',
