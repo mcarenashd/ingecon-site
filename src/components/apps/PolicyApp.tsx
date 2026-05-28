@@ -3,7 +3,6 @@ import { LanguageProvider } from '../../i18n';
 import Header from '../Header';
 import DataPolicy from '../DataPolicy';
 import Footer from '../Footer';
-import CookieBanner from '../CookieBanner';
 
 const PolicyApp: React.FC = () => (
   <LanguageProvider>
@@ -12,7 +11,6 @@ const PolicyApp: React.FC = () => (
       <DataPolicy />
     </main>
     <Footer currentPath="/politica-de-datos" />
-    <CookieBanner />
   </LanguageProvider>
 );
 

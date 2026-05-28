@@ -7,7 +7,7 @@ const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'templat
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YZW_J8eSQzo57U8sG';
 
 type FormData = { name: string; email: string; message: string };
-type FormErrors = { name: string; email: string; message: string };
+type FormErrors = { name: string; email: string; message: string; consent: string };
 type Status = 'idle' | 'sending' | 'success' | 'error';
 
 const PhoneIcon = () => (
@@ -30,18 +30,20 @@ const LocationIcon = () => (
 const Contact: React.FC = () => {
   const { t } = useTranslation();
   const [formData, setFormData] = useState<FormData>({ name: '', email: '', message: '' });
-  const [errors, setErrors] = useState<FormErrors>({ name: '', email: '', message: '' });
+  const [errors, setErrors] = useState<FormErrors>({ name: '', email: '', message: '', consent: '' });
   const [status, setStatus] = useState<Status>('idle');
   const [honeypot, setHoneypot] = useState('');
+  const [consent, setConsent] = useState(false);
   const [mapLoaded, setMapLoaded] = useState(false);
 
   const validate = (): boolean => {
-    const newErrors: FormErrors = { name: '', email: '', message: '' };
+    const newErrors: FormErrors = { name: '', email: '', message: '', consent: '' };
     let isValid = true;
     if (!formData.name.trim()) { newErrors.name = t.contact.errorNameRequired; isValid = false; }
     if (!formData.email.trim()) { newErrors.email = t.contact.errorEmailRequired; isValid = false; }
     else if (!/\S+@\S+\.\S+/.test(formData.email)) { newErrors.email = t.contact.errorEmailInvalid; isValid = false; }
     if (!formData.message.trim()) { newErrors.message = t.contact.errorMessageRequired; isValid = false; }
+    if (!consent) { newErrors.consent = t.contact.errorConsentRequired; isValid = false; }
     setErrors(newErrors);
     return isValid;
   };
@@ -69,7 +71,8 @@ const Contact: React.FC = () => {
       }, EMAILJS_PUBLIC_KEY);
       setStatus('success');
       setFormData({ name: '', email: '', message: '' });
-      setErrors({ name: '', email: '', message: '' });
+      setErrors({ name: '', email: '', message: '', consent: '' });
+      setConsent(false);
     } catch {
       setStatus('error');
     }
@@ -241,6 +244,31 @@ const Contact: React.FC = () => {
                     className={`${inputBase} resize-none ${errors.message ? inputError : inputIdle}`}
                   />
                   {errors.message && <p id="contact-message-error" role="alert" className="text-red-500 text-xs mt-1">{errors.message}</p>}
+                </div>
+                <div>
+                  <label htmlFor="contact-consent" className="flex items-start gap-3 cursor-pointer">
+                    <input
+                      id="contact-consent"
+                      type="checkbox"
+                      name="consent"
+                      checked={consent}
+                      onChange={(e) => {
+                        setConsent(e.target.checked);
+                        if (e.target.checked && errors.consent) setErrors({ ...errors, consent: '' });
+                      }}
+                      aria-invalid={!!errors.consent}
+                      aria-describedby={errors.consent ? 'contact-consent-error' : undefined}
+                      className="mt-0.5 w-4 h-4 flex-shrink-0 rounded border-gray-300 text-[#6a9a10] focus:ring-2 focus:ring-[#6a9a10]/40 cursor-pointer"
+                    />
+                    <span className="text-xs text-gray-600 leading-relaxed">
+                      {t.contact.consentBefore}
+                      <a href="/politica-de-datos" className="text-[#6a9a10] underline hover:text-[#5a8509]">
+                        {t.contact.consentLink}
+                      </a>
+                      {t.contact.consentAfter}
+                    </span>
+                  </label>
+                  {errors.consent && <p id="contact-consent-error" role="alert" className="text-red-500 text-xs mt-1 ml-7">{errors.consent}</p>}
                 </div>
                 <button
                   type="submit"

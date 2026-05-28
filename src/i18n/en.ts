@@ -32,13 +32,6 @@ const en: Translations = {
     exploreProjects: 'See projects',
   },
 
-  cookies: {
-    message: 'We use anonymous analytics cookies to improve the site. By continuing to browse you accept our ',
-    policyLink: 'Data Protection Policy',
-    accept: 'Accept',
-    dismissLabel: 'Dismiss cookie notice',
-  },
-
   whatsapp: {
     ariaLabel: 'Contact us on WhatsApp',
     tooltip: 'Message us on WhatsApp',
@@ -172,6 +165,10 @@ const en: Translations = {
     errorMessageRequired: 'Message is required.',
     formSending: 'Sending...',
     formError: 'Could not send the message. Please try again.',
+    consentBefore: 'I have read and authorize the processing of my personal data according to the ',
+    consentLink: 'Data Protection Policy',
+    consentAfter: ' of INGECON S.A.S., pursuant to Law 1581 of 2012.',
+    errorConsentRequired: 'You must authorize data processing to send the message.',
   },
 
   footer: {

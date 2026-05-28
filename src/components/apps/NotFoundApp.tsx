@@ -3,7 +3,6 @@ import { LanguageProvider } from '../../i18n';
 import Header from '../Header';
 import NotFound from '../NotFound';
 import Footer from '../Footer';
-import CookieBanner from '../CookieBanner';
 
 const NotFoundApp: React.FC = () => (
   <LanguageProvider>
@@ -12,7 +11,6 @@ const NotFoundApp: React.FC = () => (
       <NotFound />
     </main>
     <Footer currentPath="/404" />
-    <CookieBanner />
   </LanguageProvider>
 );
 

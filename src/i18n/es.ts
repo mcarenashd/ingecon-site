@@ -30,13 +30,6 @@ const es = {
     exploreProjects: 'Ver proyectos',
   },
 
-  cookies: {
-    message: 'Usamos cookies analíticas anónimas para mejorar el sitio. Al continuar navegando aceptas nuestra ',
-    policyLink: 'Política de Protección de Datos',
-    accept: 'Aceptar',
-    dismissLabel: 'Cerrar aviso de cookies',
-  },
-
   whatsapp: {
     ariaLabel: 'Contactar por WhatsApp',
     tooltip: 'Escríbenos por WhatsApp',
@@ -170,6 +163,10 @@ const es = {
     errorMessageRequired: 'El mensaje es obligatorio.',
     formSending: 'Enviando...',
     formError: 'No se pudo enviar el mensaje. Intente de nuevo.',
+    consentBefore: 'He leído y autorizo el tratamiento de mis datos personales según la ',
+    consentLink: 'Política de Protección de Datos',
+    consentAfter: ' de INGECON S.A.S., conforme a la Ley 1581 de 2012.',
+    errorConsentRequired: 'Debe autorizar el tratamiento de datos para enviar el mensaje.',
   },
 
   footer: {

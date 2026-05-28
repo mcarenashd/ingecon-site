@@ -3,7 +3,6 @@ import { LanguageProvider } from '../../i18n';
 import Header from '../Header';
 import Careers from '../Careers';
 import Footer from '../Footer';
-import CookieBanner from '../CookieBanner';
 
 const CareersApp: React.FC = () => (
   <LanguageProvider>
@@ -12,7 +11,6 @@ const CareersApp: React.FC = () => (
       <Careers />
     </main>
     <Footer currentPath="/carreras" />
-    <CookieBanner />
   </LanguageProvider>
 );
 
