@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
 
 export interface Props {
   title: string;
@@ -139,11 +140,13 @@ const organizationSchema = {
   <meta name="twitter:image" content={ogImage} />
 
   {/* Schema.org */}
-  <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
-  {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(organizationSchema)} />
+  {schema && <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />}
 
   {/* LCP hero image preload */}
   {path === '/' && <link rel="preload" as="image" href="/images/calle-92-654YlBhL.webp" fetchpriority="high" />}
+
+  <ClientRouter />
 </head>
 <body class="bg-white text-gray-700 font-sans leading-normal tracking-tight">
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
