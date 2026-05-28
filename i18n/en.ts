@@ -23,6 +23,15 @@ const en: Translations = {
     scrollHint: 'Explore',
   },
 
+  notFound: {
+    eyebrow: 'Error 404',
+    heading: 'Page not found',
+    description: 'The page you are looking for does not exist or was moved. Go back to the homepage or explore our main sections.',
+    backHome: 'Back to home',
+    exploreServices: 'See services',
+    exploreProjects: 'See projects',
+  },
+
   whatsapp: {
     ariaLabel: 'Contact us on WhatsApp',
     tooltip: 'Message us on WhatsApp',

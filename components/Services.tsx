@@ -60,7 +60,7 @@ const Services: React.FC = () => {
           {t.services.items.map((service, i) => (
             <div
               key={i}
-              className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group flex flex-col h-full"
+              className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-md motion-safe:hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none group flex flex-col h-full"
             >
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[#6a9a10]/10 text-[#6a9a10] mb-5 group-hover:bg-[#6a9a10] group-hover:text-white transition-colors duration-300">
                 {icons[i]}

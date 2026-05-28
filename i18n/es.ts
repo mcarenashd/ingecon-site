@@ -21,6 +21,15 @@ const es = {
     scrollHint: 'Explorar',
   },
 
+  notFound: {
+    eyebrow: 'Error 404',
+    heading: 'Página no encontrada',
+    description: 'La página que buscas no existe o fue movida. Te invitamos a volver al inicio o explorar nuestras secciones principales.',
+    backHome: 'Volver al inicio',
+    exploreServices: 'Ver servicios',
+    exploreProjects: 'Ver proyectos',
+  },
+
   whatsapp: {
     ariaLabel: 'Contactar por WhatsApp',
     tooltip: 'Escríbenos por WhatsApp',

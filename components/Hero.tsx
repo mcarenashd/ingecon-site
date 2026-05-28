@@ -38,13 +38,13 @@ const Hero: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="#contacto"
-            className="inline-block bg-[#6a9a10] hover:bg-[#5a8509] text-white font-bold py-4 px-10 rounded-lg text-base md:text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            className="inline-block bg-[#6a9a10] hover:bg-[#5a8509] text-white font-bold py-4 px-10 rounded-lg text-base md:text-lg transition-all duration-300 motion-reduce:transition-none shadow-lg hover:shadow-xl motion-safe:hover:-translate-y-0.5"
           >
             {t.hero.ctaPrimary}
           </a>
           <a
             href="#proyectos"
-            className="inline-block bg-white/15 hover:bg-white/25 text-white font-semibold py-4 px-10 rounded-lg text-base md:text-lg border-2 border-white/60 hover:border-white transition-all duration-300 backdrop-blur-sm hover:-translate-y-0.5"
+            className="inline-block bg-white/15 hover:bg-white/25 text-white font-semibold py-4 px-10 rounded-lg text-base md:text-lg border-2 border-white/60 hover:border-white transition-all duration-300 motion-reduce:transition-none backdrop-blur-sm motion-safe:hover:-translate-y-0.5"
           >
             {t.hero.ctaSecondary}
           </a>
@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-60 hover:opacity-100 transition-opacity duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/60 rounded-md px-2 py-1 z-10"
       >
         <span className="text-xs text-white tracking-widest uppercase">{t.hero.scrollHint}</span>
-        <svg aria-hidden="true" focusable="false" className="w-5 h-5 text-white animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg aria-hidden="true" focusable="false" className="w-5 h-5 text-white animate-bounce motion-reduce:animate-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
       </a>

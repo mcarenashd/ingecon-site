@@ -126,9 +126,9 @@ const Header: React.FC = () => {
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
           >
-            <span aria-hidden="true" className={`block w-5 h-0.5 mb-1 transition-transform duration-300 ${transparentMode ? 'bg-white' : 'bg-gray-700'} ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
+            <span aria-hidden="true" className={`block w-5 h-0.5 mb-1 transition-transform duration-300 motion-reduce:transition-none ${transparentMode ? 'bg-white' : 'bg-gray-700'} ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
             <span aria-hidden="true" className={`block w-5 h-0.5 mb-1 transition-opacity duration-300 ${transparentMode ? 'bg-white' : 'bg-gray-700'} ${isOpen ? 'opacity-0' : ''}`} />
-            <span aria-hidden="true" className={`block w-5 h-0.5 transition-transform duration-300 ${transparentMode ? 'bg-white' : 'bg-gray-700'} ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
+            <span aria-hidden="true" className={`block w-5 h-0.5 transition-transform duration-300 motion-reduce:transition-none ${transparentMode ? 'bg-white' : 'bg-gray-700'} ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
           </button>
         </div>
       </div>

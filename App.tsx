@@ -15,6 +15,7 @@ import SEO from './components/SEO';
 
 const Careers = lazy(() => import('./components/Careers'));
 const DataPolicy = lazy(() => import('./components/DataPolicy'));
+const NotFound = lazy(() => import('./components/NotFound'));
 
 const SITE_URL = 'https://ingecon.com.co';
 
@@ -122,6 +123,21 @@ const PolicyRoute: React.FC = () => {
   );
 };
 
+const NotFoundRoute: React.FC = () => {
+  const { locale } = useTranslation();
+  const title = locale === 'es'
+    ? 'Página no encontrada | INGECON S.A.S.'
+    : 'Page not found | INGECON S.A.S.';
+  return (
+    <>
+      <SEO path="/404" title={title} noindex />
+      <Suspense fallback={<RouteLoader />}>
+        <NotFound />
+      </Suspense>
+    </>
+  );
+};
+
 const App: React.FC = () => {
   return (
     <LanguageProvider>
@@ -132,7 +148,7 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/carreras" element={<CareersRoute />} />
             <Route path="/politica-de-datos" element={<PolicyRoute />} />
-            <Route path="*" element={<Home />} />
+            <Route path="*" element={<NotFoundRoute />} />
           </Routes>
         </main>
         <Footer />
