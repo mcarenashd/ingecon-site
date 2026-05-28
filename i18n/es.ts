@@ -17,9 +17,6 @@ const es = {
     subheadline: 'Garantizamos el cumplimiento técnico, financiero, ambiental, social y jurídico de cada proyecto. Desde 2001, construyendo confianza con las principales entidades públicas del país.',
     ctaPrimary: 'Hablemos de su proyecto',
     ctaSecondary: 'Ver trayectoria',
-    statYears: 'Años de experiencia',
-    statProjects: 'Proyectos ejecutados',
-    statClients: 'Entidades contratantes',
     scrollHint: 'Explorar',
   },
 
@@ -50,8 +47,8 @@ const es = {
         description: 'Control técnico, administrativo y financiero en la construcción de edificios, obras sanitarias y arquitectónicas, garantizando cumplimiento normativo y calidad de entrega.',
       },
       {
-        title: 'Interventoría de Carreteras y Vías',
-        description: 'Supervisión integral de proyectos viales — desde estudios previos hasta entrega final — asegurando estándares técnicos, plazos y manejo ambiental.',
+        title: 'Interventoría de Aeropuertos, Infraestructura de Transporte y Túneles',
+        description: 'Supervisión integral de proyectos de aeropuertos, infraestructura de transporte y túneles — desde estudios previos hasta entrega final — asegurando estándares técnicos, plazos y manejo ambiental.',
       },
       {
         title: 'Interventoría de Obras de Urbanismo',
@@ -74,7 +71,8 @@ const es = {
     loadMore: 'Ver más proyectos',
     remaining: 'restantes',
     catAll: 'Todos',
-    catCiviles: 'Interventoría a obras civiles (vías, espacio público, aeropuertos, concesiones, edificaciones, saneamiento básico)',
+    catCiviles: 'Interventoría a obras civiles',
+    catCivilesIncludes: 'Interventoría incluye: vías, infraestructura de transporte, aeropuertos, túneles, concesiones, espacio público, edificaciones y saneamiento básico.',
     catEstudios: 'Estudios y Diseños',
     catEstudiosInt: 'Estudios y Diseños (Interventoría)',
   },

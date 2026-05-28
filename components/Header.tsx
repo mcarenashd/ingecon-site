@@ -1,27 +1,25 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from '../i18n';
 
-interface HeaderProps {
-  setPage: (page: string) => void;
-  currentPage: string;
-}
-
-const Header: React.FC<HeaderProps> = ({ setPage, currentPage }) => {
+const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { t, locale, setLocale } = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
   const logoSrc = `${import.meta.env.BASE_URL}images/logo-ingecon-CUG5jr9Z.webp`;
 
   const navLinks = [
-    { href: '#inicio', label: t.nav.inicio },
-    { href: '#nosotros', label: t.nav.nosotros },
-    { href: '#servicios', label: t.nav.servicios },
-    { href: '#proyectos', label: t.nav.proyectos },
-    { href: '#contacto', label: t.nav.contacto },
-    { href: '#carreras', label: t.nav.carreras },
+    { target: { path: '/', hash: 'inicio' }, label: t.nav.inicio },
+    { target: { path: '/', hash: 'nosotros' }, label: t.nav.nosotros },
+    { target: { path: '/', hash: 'servicios' }, label: t.nav.servicios },
+    { target: { path: '/', hash: 'proyectos' }, label: t.nav.proyectos },
+    { target: { path: '/', hash: 'contacto' }, label: t.nav.contacto },
+    { target: { path: '/carreras' }, label: t.nav.carreras },
   ];
 
-  const allLinks = [...navLinks, { href: '#politica-de-datos', label: t.nav.politicaDatos }];
+  const allLinks = [...navLinks, { target: { path: '/politica-de-datos' }, label: t.nav.politicaDatos }];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,76 +29,80 @@ const Header: React.FC<HeaderProps> = ({ setPage, currentPage }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  // Force header to opaque background on non-home routes
+  const isHome = location.pathname === '/';
+  const transparentMode = isHome && !isScrolled;
+
+  const handleNavClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    target: { path: string; hash?: string }
+  ) => {
     event.preventDefault();
-    const targetId = href.substring(1);
     if (isOpen) setIsOpen(false);
 
-    if (targetId === 'politica-de-datos') {
-      setPage('policy');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      return;
-    }
-
-    if (targetId === 'carreras') {
-      setPage('careers');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      return;
-    }
-
-    const scrollToTarget = () => {
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
+    const scrollToHash = () => {
+      if (!target.hash) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+      const el = document.getElementById(target.hash);
+      if (el) {
         const headerOffset = document.querySelector('header')?.offsetHeight || 72;
-        const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        const offsetPosition = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
         window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-      } else if (targetId === 'inicio') {
+      } else if (target.hash === 'inicio') {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     };
 
-    if (currentPage !== 'home') {
-      setPage('home');
-      setTimeout(scrollToTarget, 100);
+    if (location.pathname !== target.path) {
+      navigate(target.path);
+      setTimeout(scrollToHash, 100);
     } else {
-      scrollToTarget();
+      scrollToHash();
     }
   };
 
   const toggleLocale = () => setLocale(locale === 'es' ? 'en' : 'es');
 
   const langBtnClass = `px-3 py-1.5 rounded-md text-xs font-bold border transition-all duration-200 ${
-    isScrolled
-      ? 'border-gray-300 text-gray-700 hover:border-[#6a9a10] hover:text-[#6a9a10]'
-      : 'border-white/30 text-white/90 hover:border-white hover:text-white'
+    transparentMode
+      ? 'border-white/30 text-white/90 hover:border-white hover:text-white'
+      : 'border-gray-300 text-gray-700 hover:border-[#6a9a10] hover:text-[#6a9a10]'
   }`;
+
+  const hrefFor = (target: { path: string; hash?: string }) =>
+    target.hash ? `${target.path}#${target.hash}` : target.path;
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white border-b border-gray-100'
-          : 'bg-transparent'
+        transparentMode ? 'bg-transparent' : 'bg-white border-b border-gray-100'
       }`}
     >
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <a href="#inicio" onClick={(e) => handleNavClick(e, '#inicio')} className="flex-shrink-0">
-            <img src={logoSrc} alt="Ingecon S.A.S." className="h-14 w-auto drop-shadow-md" />
+          <a
+            href="/"
+            onClick={(e) => handleNavClick(e, { path: '/', hash: 'inicio' })}
+            className="flex-shrink-0"
+            aria-label="Ingecon S.A.S. - Inicio"
+          >
+            <img src={logoSrc} alt="Ingecon S.A.S." className="h-14 w-auto drop-shadow-md" width={120} height={56} />
           </a>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center space-x-1">
+          <nav className="hidden md:flex items-center space-x-1" aria-label="Navegación principal">
             {navLinks.map(link => (
               <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
+                key={link.label}
+                href={hrefFor(link.target)}
+                onClick={(e) => handleNavClick(e, link.target)}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                  isScrolled
-                    ? 'text-gray-700 hover:text-[#6a9a10] hover:bg-gray-50'
-                    : 'text-white/90 hover:text-white hover:bg-white/10'
+                  transparentMode
+                    ? 'text-white/90 hover:text-white hover:bg-white/10'
+                    : 'text-gray-700 hover:text-[#6a9a10] hover:bg-gray-50'
                 }`}
               >
                 {link.label}
@@ -118,32 +120,35 @@ const Header: React.FC<HeaderProps> = ({ setPage, currentPage }) => {
           {/* Mobile hamburger */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`md:hidden p-2 rounded-md transition-colors ${isScrolled ? 'text-gray-700' : 'text-white'}`}
+            className={`md:hidden p-2 rounded-md transition-colors ${transparentMode ? 'text-white' : 'text-gray-700'}`}
             aria-label={t.nav.openMenu}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
-            <span className={`block w-5 h-0.5 mb-1 transition-transform duration-300 ${isScrolled ? 'bg-gray-700' : 'bg-white'} ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
-            <span className={`block w-5 h-0.5 mb-1 transition-opacity duration-300 ${isScrolled ? 'bg-gray-700' : 'bg-white'} ${isOpen ? 'opacity-0' : ''}`} />
-            <span className={`block w-5 h-0.5 transition-transform duration-300 ${isScrolled ? 'bg-gray-700' : 'bg-white'} ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
+            <span aria-hidden="true" className={`block w-5 h-0.5 mb-1 transition-transform duration-300 ${transparentMode ? 'bg-white' : 'bg-gray-700'} ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
+            <span aria-hidden="true" className={`block w-5 h-0.5 mb-1 transition-opacity duration-300 ${transparentMode ? 'bg-white' : 'bg-gray-700'} ${isOpen ? 'opacity-0' : ''}`} />
+            <span aria-hidden="true" className={`block w-5 h-0.5 transition-transform duration-300 ${transparentMode ? 'bg-white' : 'bg-gray-700'} ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
           </button>
         </div>
       </div>
 
       {/* Mobile menu */}
       <div
+        id="mobile-menu"
         className={`md:hidden absolute top-full left-0 right-0 border-t transition-all duration-300 overflow-hidden ${
-          isScrolled ? 'bg-white border-gray-100' : 'bg-gray-900/95 backdrop-blur-md border-white/10'
-        } ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}
+          transparentMode ? 'bg-gray-900/95 backdrop-blur-md border-white/10' : 'bg-white border-gray-100'
+        } ${isOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}
       >
-        <nav className="px-6 py-4 flex flex-col space-y-1">
+        <nav className="px-6 py-4 flex flex-col space-y-1" aria-label="Navegación móvil">
           {allLinks.map(link => (
             <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
+              key={link.label}
+              href={hrefFor(link.target)}
+              onClick={(e) => handleNavClick(e, link.target)}
               className={`px-4 py-3 rounded-lg font-medium transition-colors ${
-                isScrolled
-                  ? 'text-gray-700 hover:text-[#6a9a10] hover:bg-gray-50'
-                  : 'text-white/80 hover:text-white hover:bg-white/10'
+                transparentMode
+                  ? 'text-white/80 hover:text-white hover:bg-white/10'
+                  : 'text-gray-700 hover:text-[#6a9a10] hover:bg-gray-50'
               }`}
             >
               {link.label}
@@ -152,12 +157,12 @@ const Header: React.FC<HeaderProps> = ({ setPage, currentPage }) => {
           <button
             onClick={toggleLocale}
             className={`px-4 py-3 rounded-lg font-medium text-left transition-colors ${
-              isScrolled
-                ? 'text-gray-700 hover:text-[#6a9a10] hover:bg-gray-50'
-                : 'text-white/80 hover:text-white hover:bg-white/10'
+              transparentMode
+                ? 'text-white/80 hover:text-white hover:bg-white/10'
+                : 'text-gray-700 hover:text-[#6a9a10] hover:bg-gray-50'
             }`}
           >
-            {locale === 'es' ? '🇺🇸 English' : '🇨🇴 Español'}
+            {locale === 'es' ? 'English' : 'Español'}
           </button>
         </nav>
       </div>

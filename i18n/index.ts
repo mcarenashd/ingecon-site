@@ -27,10 +27,9 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     document.documentElement.lang = newLocale;
   }, []);
 
-  // Set lang attribute on initial render
   React.useEffect(() => {
     document.documentElement.lang = locale;
-  }, []);
+  }, [locale]);
 
   const value = useMemo(() => ({
     locale,

@@ -19,9 +19,6 @@ const en: Translations = {
     subheadline: 'We ensure the technical, financial, environmental, social, and legal compliance of every project. Since 2001, building trust with the country\'s leading public entities.',
     ctaPrimary: 'Let\'s talk about your project',
     ctaSecondary: 'View our track record',
-    statYears: 'Years of experience',
-    statProjects: 'Projects completed',
-    statClients: 'Contracting entities',
     scrollHint: 'Explore',
   },
 
@@ -52,8 +49,8 @@ const en: Translations = {
         description: 'Technical, administrative, and financial control in the construction of buildings, sanitary, and architectural works, ensuring regulatory compliance and delivery quality.',
       },
       {
-        title: 'Road & Highway Oversight',
-        description: 'Comprehensive supervision of road projects — from preliminary studies to final delivery — ensuring technical standards, deadlines, and environmental management.',
+        title: 'Airport, Transport Infrastructure & Tunnel Oversight',
+        description: 'Comprehensive supervision of airport, transport infrastructure, and tunnel projects — from preliminary studies to final delivery — ensuring technical standards, deadlines, and environmental management.',
       },
       {
         title: 'Urban Development Oversight',
@@ -76,7 +73,8 @@ const en: Translations = {
     loadMore: 'Load more projects',
     remaining: 'remaining',
     catAll: 'All',
-    catCiviles: 'Oversight of civil works (roads, public space, airports, concessions, buildings, sanitation)',
+    catCiviles: 'Oversight of civil works',
+    catCivilesIncludes: 'Oversight includes: roads, transport infrastructure, airports, tunnels, concessions, public space, buildings and sanitation.',
     catEstudios: 'Studies & Designs',
     catEstudiosInt: 'Studies & Designs (Oversight)',
   },

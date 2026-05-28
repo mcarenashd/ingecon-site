@@ -27,11 +27,18 @@ const Clients: React.FC = () => {
               className="flex items-center justify-center p-6 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#6a9a10]/30 transition-all duration-300"
               title={client.name}
             >
-              <img
-                src={client.logo}
-                alt={client.name}
-                className="max-h-14 md:max-h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
-              />
+              <div className="flex items-center justify-center h-16 md:h-20 w-full">
+                <img
+                  src={client.logo}
+                  alt={`Logo ${client.name}`}
+                  loading="lazy"
+                  decoding="async"
+                  width={160}
+                  height={80}
+                  style={client.scale ? { transform: `scale(${client.scale})` } : undefined}
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
             </div>
           ))}
         </div>

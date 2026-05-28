@@ -24,4 +24,6 @@ export interface Project {
 export interface Client {
   name: string;
   logo: string;
+  /** Visual scale multiplier for logos with internal whitespace padding. Default 1. */
+  scale?: number;
 }

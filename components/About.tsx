@@ -7,7 +7,7 @@ const About: React.FC = () => {
 
   const stats = [
     { value: '25+', label: t.about.statYears },
-    { value: '77+', label: t.about.statContracts },
+    { value: '80+', label: t.about.statContracts },
     { value: '10+', label: t.about.statClients },
     { value: '2001', label: t.about.statFounded },
   ];

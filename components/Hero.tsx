@@ -38,34 +38,23 @@ const Hero: React.FC = () => {
           </a>
           <a
             href="#proyectos"
-            className="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-10 rounded-lg text-base md:text-lg border border-white/30 transition-all duration-300 backdrop-blur-sm hover:-translate-y-0.5"
+            className="inline-block bg-white/15 hover:bg-white/25 text-white font-semibold py-4 px-10 rounded-lg text-base md:text-lg border-2 border-white/60 hover:border-white transition-all duration-300 backdrop-blur-sm hover:-translate-y-0.5"
           >
             {t.hero.ctaSecondary}
           </a>
         </div>
-
-        <div className="mt-16 grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto border-t border-white/20 pt-10">
-          <div>
-            <p className="text-3xl md:text-4xl font-bold text-[#c5db5a]">25+</p>
-            <p className="text-sm md:text-base text-gray-300 mt-1">{t.hero.statYears}</p>
-          </div>
-          <div>
-            <p className="text-3xl md:text-4xl font-bold text-[#c5db5a]">+77</p>
-            <p className="text-sm md:text-base text-gray-300 mt-1">{t.hero.statProjects}</p>
-          </div>
-          <div>
-            <p className="text-3xl md:text-4xl font-bold text-[#c5db5a]">10+</p>
-            <p className="text-sm md:text-base text-gray-300 mt-1">{t.hero.statClients}</p>
-          </div>
-        </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-60">
+      <a
+        href="#nosotros"
+        aria-label={t.hero.scrollHint}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-60 hover:opacity-100 transition-opacity duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/60 rounded-md px-2 py-1"
+      >
         <span className="text-xs text-white tracking-widest uppercase">{t.hero.scrollHint}</span>
-        <svg className="w-5 h-5 text-white animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg aria-hidden="true" focusable="false" className="w-5 h-5 text-white animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
-      </div>
+      </a>
     </section>
   );
 };

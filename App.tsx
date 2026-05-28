@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from './i18n';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -11,30 +12,31 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import DataPolicy from './components/DataPolicy';
 
-const App: React.FC = () => {
-  const [page, setPage] = useState('home');
+const Home: React.FC = () => (
+  <>
+    <Hero />
+    <About />
+    <Services />
+    <Projects />
+    <Clients />
+    <Contact />
+  </>
+);
 
+const App: React.FC = () => {
   return (
     <LanguageProvider>
       <div className="bg-white text-gray-800 font-sans leading-normal tracking-tight">
-        <Header setPage={setPage} currentPage={page} />
-        <main>
-          {page === 'home' ? (
-            <>
-              <Hero />
-              <About />
-              <Services />
-              <Projects />
-              <Clients />
-              <Contact />
-            </>
-          ) : page === 'careers' ? (
-            <Careers />
-          ) : (
-            <DataPolicy />
-          )}
+        <Header />
+        <main id="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/carreras" element={<Careers />} />
+            <Route path="/politica-de-datos" element={<DataPolicy />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
         </main>
-        <Footer setPage={setPage} />
+        <Footer />
       </div>
     </LanguageProvider>
   );
