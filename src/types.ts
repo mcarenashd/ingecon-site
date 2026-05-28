@@ -10,7 +10,6 @@ export interface Service {
 
 export interface Project {
   id: string;
-  image: string;
   title: string;
   category: string;
   description: string;

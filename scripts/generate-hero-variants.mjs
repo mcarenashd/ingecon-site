@@ -21,11 +21,6 @@ for (const w of widths) {
     sharp(SRC).resize({ width: w }).webp({ quality: 78 }).toFile(join(OUT_DIR, `hero-${w}.webp`)),
   );
 }
-// Full-size AVIF (no resize) for high-DPR desktops
-tasks.push(
-  sharp(SRC).avif({ quality: 55 }).toFile(join(OUT_DIR, 'hero-full.avif')),
-);
-
 const results = await Promise.all(tasks);
 console.log(`Generated ${results.length} hero variants in public/images/`);
 for (const r of results) console.log(`  ${r.width}x${r.height} -> ${(r.size / 1024).toFixed(1)} KB`);

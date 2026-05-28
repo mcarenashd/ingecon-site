@@ -24,10 +24,15 @@ const es = {
   notFound: {
     eyebrow: 'Error 404',
     heading: 'Página no encontrada',
-    description: 'La página que buscas no existe o fue movida. Te invitamos a volver al inicio o explorar nuestras secciones principales.',
+    description: 'La página que buscas no existe o fue movida. Te invitamos a explorar las secciones principales del sitio.',
     backHome: 'Volver al inicio',
-    exploreServices: 'Ver servicios',
-    exploreProjects: 'Ver proyectos',
+    suggestionsTitle: 'Quizás te interese:',
+    suggestions: [
+      { title: 'Nuestros servicios', description: 'Interventoría, consultoría y gerencia de proyectos.', href: '/#servicios' },
+      { title: 'Proyectos ejecutados', description: 'Más de 80 contratos para entidades públicas.', href: '/#proyectos' },
+      { title: 'Trabaja con nosotros', description: 'Vacantes abiertas en INGECON.', href: '/carreras' },
+      { title: 'Hablemos', description: 'Contáctanos para conocer su proyecto.', href: '/#contacto' },
+    ],
   },
 
   whatsapp: {
@@ -177,6 +182,9 @@ const es = {
     nitLabel: 'NIT',
     nitValue: '810.002.747-0',
     copyright: 'Ingeniería y Consultoría INGECON S.A.S. Todos los derechos reservados.',
+    madeBy: 'Hecho por',
+    madeByCompany: 'Byte Lab S.A.S.',
+    madeByEmail: 'info@bytelab.com.co',
   },
 
   dataPolicy: {

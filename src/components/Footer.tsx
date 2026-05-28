@@ -96,8 +96,17 @@ const Footer: React.FC<FooterProps> = ({ currentPath = '/' }) => {
           </div>
         </div>
 
-        <div className="pt-6 border-t border-gray-800 text-center text-xs text-gray-500">
-          &copy; {new Date().getFullYear()} {t.footer.copyright}
+        <div className="pt-6 border-t border-gray-800 text-center text-xs text-gray-500 space-y-2">
+          <p>&copy; {new Date().getFullYear()} {t.footer.copyright}</p>
+          <p>
+            {t.footer.madeBy}{' '}
+            <a
+              href={`mailto:${t.footer.madeByEmail}`}
+              className="text-gray-400 hover:text-white transition-colors duration-200"
+            >
+              {t.footer.madeByCompany}
+            </a>
+          </p>
         </div>
       </div>
     </footer>

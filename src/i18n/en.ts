@@ -26,10 +26,15 @@ const en: Translations = {
   notFound: {
     eyebrow: 'Error 404',
     heading: 'Page not found',
-    description: 'The page you are looking for does not exist or was moved. Go back to the homepage or explore our main sections.',
+    description: 'The page you are looking for does not exist or was moved. Explore the main sections of the site.',
     backHome: 'Back to home',
-    exploreServices: 'See services',
-    exploreProjects: 'See projects',
+    suggestionsTitle: 'You may be interested in:',
+    suggestions: [
+      { title: 'Our services', description: 'Oversight, consulting and project management.', href: '/#servicios' },
+      { title: 'Completed projects', description: 'Over 80 contracts for public entities.', href: '/#proyectos' },
+      { title: 'Careers', description: 'Open positions at INGECON.', href: '/carreras' },
+      { title: 'Get in touch', description: 'Tell us about your project.', href: '/#contacto' },
+    ],
   },
 
   whatsapp: {
@@ -179,6 +184,9 @@ const en: Translations = {
     nitLabel: 'Tax ID (NIT)',
     nitValue: '810.002.747-0',
     copyright: 'Ingeniería y Consultoría INGECON S.A.S. All rights reserved.',
+    madeBy: 'Site by',
+    madeByCompany: 'Byte Lab S.A.S.',
+    madeByEmail: 'info@bytelab.com.co',
   },
 
   dataPolicy: {

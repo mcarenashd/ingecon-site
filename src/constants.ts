@@ -47,13 +47,7 @@ export const SERVICES_DATA: Service[] = [
   },
 ];
 
-const categoryImages: { [key: string]: string } = {
-  "Interventoría a obras civiles": imageAsset('Generated Image October 26, 2025 - 10_21PM.webp'),
-  "Estudios y Diseños": imageAsset('Generated Image October 26, 2025 - 10_20PM.webp'),
-  "Interventoría en Estudios y Diseños": imageAsset('Generated Image October 26, 2025 - 10_20PM.webp'),
-};
-
-const projectsRaw: Omit<Project, 'image'>[] = [
+const projectsRaw: Project[] = [
   {
     id: 'proj-1',
     title: 'Interventoría Construcción Accesos y Pavimentos Bosa',
@@ -750,10 +744,7 @@ const projectsRaw: Omit<Project, 'image'>[] = [
 ];
 
 
-export const PROJECTS_DATA: Project[] = projectsRaw.map(project => ({
-  ...project,
-  image: categoryImages[project.category] || 'https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?q=80&w=1920&h=1080&fit=crop',
-}));
+export const PROJECTS_DATA: Project[] = projectsRaw;
 
 
 export const CLIENTS_DATA: Client[] = [
