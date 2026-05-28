@@ -67,19 +67,19 @@ const en: Translations = {
     items: [
       {
         title: 'Building & Sanitary Works Oversight',
-        description: 'Technical, administrative, and financial control in the construction of buildings, sanitary, and architectural works, ensuring regulatory compliance and delivery quality.',
+        description: 'Technical, administrative, financial, environmental and legal control over the construction of public buildings, sanitary works, architectural facilities and basic sanitation projects. We verify compliance with technical specifications, budget management and material quality at every phase, from preliminary studies through final handover, ensuring each project meets Colombian regulations and the contractual obligations agreed with the public entity.',
       },
       {
         title: 'Airport, Transport Infrastructure & Tunnel Oversight',
-        description: 'Comprehensive supervision of airport, transport infrastructure, and tunnel projects — from preliminary studies to final delivery — ensuring technical standards, deadlines, and environmental management.',
+        description: 'Comprehensive supervision of airport, road, highway, concession, tunnel and public transport infrastructure projects. We oversee every stage — preliminary studies, design, execution, delivery and operation — verifying technical standards, quality controls, environmental management, social management and schedule compliance. Proven track record with INVIAS, ANI, Aerocivil and concession authorities.',
       },
       {
         title: 'Urban Development Oversight',
-        description: 'Oversight management for public space projects, sidewalks, bike paths, pedestrian bridges, and urban infrastructure.',
+        description: 'Oversight of public space projects, sidewalks, bike paths, pedestrian bridges, parks, plazas and urban facilities. We verify urban design, accessibility, materiality and construction processes, ensuring urban infrastructure meets IDU, local mayoralty and municipal standards. We coordinate with entities, communities and contractors to deliver high-quality public spaces.',
       },
       {
         title: 'Telecommunications Services',
-        description: 'Installation, operation, and maintenance of telecommunications infrastructure, with comprehensive technical, administrative, and financial management.',
+        description: 'Installation, operation and maintenance of telecommunications infrastructure — fiber optics, electronic security systems, data networks and public connectivity projects. We provide technical, administrative, financial and support management to ensure operational continuity, meeting the quality and availability standards required by public and private entities in Colombia.',
       },
     ],
   },

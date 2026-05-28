@@ -1,11 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import HomeApp from '../components/apps/HomeApp';
+import es from '../i18n/es';
 
 const SITE_URL = 'https://ingecon.com.co';
 
 const title = 'Interventoría de Obras Civiles en Colombia | INGECON S.A.S.';
-const description = 'Firma de interventoría, consultoría y gerencia con más de 25 años respaldando proyectos de infraestructura pública en Colombia. Clientes: INVIAS, IDU, ANI, Aerocivil y entidades territoriales.';
+const description = 'Firma colombiana de interventoría, consultoría y gerencia para infraestructura pública. 25+ años con INVIAS, IDU, ANI, Aerocivil.';
 
 const homeSchema = {
   '@context': 'https://schema.org',
@@ -45,6 +46,14 @@ const homeSchema = {
       'provider': { '@id': `${SITE_URL}/#organization` },
       'areaServed': { '@type': 'Country', 'name': 'Colombia' },
       'description': 'Instalación, operación y mantenimiento de infraestructura de telecomunicaciones, con gestión técnica, administrativa y financiera integral.',
+    },
+    {
+      '@type': 'FAQPage',
+      'mainEntity': es.faq.items.map((item) => ({
+        '@type': 'Question',
+        'name': item.question,
+        'acceptedAnswer': { '@type': 'Answer', 'text': item.answer },
+      })),
     },
   ],
 };

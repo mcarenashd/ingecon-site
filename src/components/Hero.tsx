@@ -20,8 +20,7 @@ const Hero: React.FC = () => {
         />
         <img
           src="/images/hero-1600.webp"
-          alt=""
-          aria-hidden="true"
+          alt="Autopista urbana iluminada de noche en Bogotá, símbolo de la infraestructura vial colombiana."
           fetchPriority="high"
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover"

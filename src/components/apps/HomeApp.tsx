@@ -5,6 +5,7 @@ import Hero from '../Hero';
 import About from '../About';
 import Services from '../Services';
 import Clients from '../Clients';
+import FAQ from '../FAQ';
 import Footer from '../Footer';
 import LazySection from '../LazySection';
 
@@ -22,6 +23,7 @@ const HomeApp: React.FC = () => (
         <Projects />
       </LazySection>
       <Clients />
+      <FAQ />
       <LazySection id="contacto" minHeight="80vh">
         <Contact />
       </LazySection>

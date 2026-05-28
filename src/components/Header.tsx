@@ -16,6 +16,7 @@ const Header: React.FC<HeaderProps> = ({ currentPath = '/' }) => {
     { path: '/', hash: 'nosotros', label: t.nav.nosotros },
     { path: '/', hash: 'servicios', label: t.nav.servicios },
     { path: '/', hash: 'proyectos', label: t.nav.proyectos },
+    { path: '/', hash: 'faq', label: t.nav.faq },
     { path: '/', hash: 'contacto', label: t.nav.contacto },
     { path: '/carreras', label: t.nav.carreras },
   ];

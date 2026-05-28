@@ -65,19 +65,19 @@ const es = {
     items: [
       {
         title: 'Interventoría de Edificios y Obras Sanitarias',
-        description: 'Control técnico, administrativo y financiero en la construcción de edificios, obras sanitarias y arquitectónicas, garantizando cumplimiento normativo y calidad de entrega.',
+        description: 'Control técnico, administrativo, financiero, ambiental y jurídico en la construcción de edificios públicos, obras sanitarias, equipamientos arquitectónicos y proyectos de saneamiento básico. Verificamos cumplimiento de especificaciones técnicas, manejo presupuestal y calidad de materiales en cada fase de obra, desde estudios previos hasta la entrega final, asegurando que cada proyecto cumpla con la normativa colombiana vigente y los requisitos contractuales pactados con la entidad pública.',
       },
       {
         title: 'Interventoría de Aeropuertos, Infraestructura de Transporte y Túneles',
-        description: 'Supervisión integral de proyectos de aeropuertos, infraestructura de transporte y túneles — desde estudios previos hasta entrega final — asegurando estándares técnicos, plazos y manejo ambiental.',
+        description: 'Supervisión integral de proyectos de aeropuertos, vías, carreteras, concesiones, túneles e infraestructura de transporte público. Acompañamos cada etapa — estudios previos, diseños, ejecución, entrega y operación — verificando estándares técnicos, controles de calidad, manejo ambiental, gestión social y cumplimiento de cronogramas. Experiencia comprobada con proyectos para INVIAS, ANI, Aerocivil y entidades concesionarias.',
       },
       {
         title: 'Interventoría de Obras de Urbanismo',
-        description: 'Gestión de interventoría en proyectos de espacio público, andenes, ciclorutas, puentes peatonales y equipamientos urbanos.',
+        description: 'Gestión de interventoría en proyectos de espacio público, andenes, ciclorutas, puentes peatonales, parques, plazas y equipamientos urbanos. Verificamos diseño urbano, accesibilidad, materialidad y procesos constructivos, garantizando que la infraestructura urbana cumpla con los parámetros del IDU, alcaldías locales y administraciones municipales. Coordinamos con entidades, comunidades y contratistas para entregar espacios públicos de calidad.',
       },
       {
         title: 'Servicios de Telecomunicaciones',
-        description: 'Instalación, operación y mantenimiento de infraestructura de telecomunicaciones, con gestión técnica, administrativa y financiera integral.',
+        description: 'Instalación, operación y mantenimiento de infraestructura de telecomunicaciones — fibra óptica, sistemas de seguridad electrónica, redes de datos y proyectos de conectividad pública. Brindamos gestión técnica, administrativa, financiera y de soporte para garantizar la continuidad operacional, cumpliendo con los estándares de calidad y disponibilidad que requieren las entidades públicas y privadas en Colombia.',
       },
     ],
   },
