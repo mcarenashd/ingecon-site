@@ -12,6 +12,8 @@ export interface Props {
   ogImage?: string;
   schema?: object;
   locale?: 'es' | 'en';
+  /** Breadcrumb items for non-home pages: [{name, path}, ...] in order from root */
+  breadcrumbs?: Array<{ name: string; path: string }>;
 }
 
 const SITE_URL = 'https://ingecon.com.co';
@@ -25,6 +27,7 @@ const {
   ogImage = DEFAULT_OG,
   schema,
   locale = 'es',
+  breadcrumbs,
 } = Astro.props;
 
 const canonical = `${SITE_URL}${path}`;
@@ -72,6 +75,22 @@ const organizationSchema = {
         'contactType': 'customer service',
         'email': 'info@ingecon.com.co',
         'availableLanguage': ['Spanish', 'English'],
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      'url': `${SITE_URL}/`,
+      'name': 'INGECON S.A.S.',
+      'publisher': { '@id': `${SITE_URL}/#organization` },
+      'inLanguage': 'es-CO',
+      'potentialAction': {
+        '@type': 'SearchAction',
+        'target': {
+          '@type': 'EntryPoint',
+          'urlTemplate': `${SITE_URL}/?q={search_term_string}`,
+        },
+        'query-input': 'required name=search_term_string',
       },
     },
     {
@@ -144,6 +163,31 @@ const organizationSchema = {
   {/* Schema.org */}
   <script type="application/ld+json" is:inline set:html={JSON.stringify(organizationSchema)} />
   {schema && <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />}
+  {breadcrumbs && breadcrumbs.length > 0 && (
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        { '@type': 'ListItem', position: 1, name: locale === 'es' ? 'Inicio' : 'Home', item: `${SITE_URL}/` },
+        ...breadcrumbs.map((b, i) => ({
+          '@type': 'ListItem',
+          position: i + 2,
+          name: b.name,
+          item: `${SITE_URL}${b.path}`,
+        })),
+      ],
+    })} />
+  )}
+
+  {/* DNS prefetch + preconnect for external runtime services */}
+  <link rel="dns-prefetch" href="https://api.emailjs.com" />
+  <link rel="dns-prefetch" href="https://www.google.com" />
+  <link rel="preconnect" href="https://api.emailjs.com" crossorigin />
+
+  {/* GSC verification — set GSC_VERIFICATION env var in Vercel to enable */}
+  {import.meta.env.GSC_VERIFICATION && (
+    <meta name="google-site-verification" content={import.meta.env.GSC_VERIFICATION} />
+  )}
 
   {/* Preload critical font (latin subset only) */}
   <link rel="preload" as="font" type="font/woff2" href="/fonts/open-sans-latin-wght-normal.woff2" crossorigin />

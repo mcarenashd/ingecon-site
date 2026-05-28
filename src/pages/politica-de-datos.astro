@@ -6,6 +6,13 @@ const title = 'Política de Protección de Datos | INGECON S.A.S.';
 const description = 'Política de tratamiento de datos personales de INGENIERÍA Y CONSULTORÍA INGECON S.A.S. en cumplimiento de la Ley 1581 de 2012.';
 ---
 
-<Layout title={title} description={description} path="/politica-de-datos" locale="es" noindex>
+<Layout
+  title={title}
+  description={description}
+  path="/politica-de-datos"
+  locale="es"
+  noindex
+  breadcrumbs={[{ name: 'Política de Protección de Datos', path: '/politica-de-datos' }]}
+>
   <PolicyApp client:load />
 </Layout>

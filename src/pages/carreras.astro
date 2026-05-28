@@ -6,6 +6,12 @@ const title = 'Trabaja con nosotros | INGECON S.A.S.';
 const description = 'Vacantes abiertas en INGECON S.A.S. Profesionales de ingeniería para proyectos de interventoría y consultoría en infraestructura pública en Colombia.';
 ---
 
-<Layout title={title} description={description} path="/carreras" locale="es">
+<Layout
+  title={title}
+  description={description}
+  path="/carreras"
+  locale="es"
+  breadcrumbs={[{ name: 'Trabaja con nosotros', path: '/carreras' }]}
+>
   <CareersApp client:load />
 </Layout>
