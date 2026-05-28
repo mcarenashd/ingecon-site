@@ -32,6 +32,13 @@ const en: Translations = {
     exploreProjects: 'See projects',
   },
 
+  cookies: {
+    message: 'We use anonymous analytics cookies to improve the site. By continuing to browse you accept our ',
+    policyLink: 'Data Protection Policy',
+    accept: 'Accept',
+    dismissLabel: 'Dismiss cookie notice',
+  },
+
   whatsapp: {
     ariaLabel: 'Contact us on WhatsApp',
     tooltip: 'Message us on WhatsApp',

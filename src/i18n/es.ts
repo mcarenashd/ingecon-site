@@ -30,6 +30,13 @@ const es = {
     exploreProjects: 'Ver proyectos',
   },
 
+  cookies: {
+    message: 'Usamos cookies analíticas anónimas para mejorar el sitio. Al continuar navegando aceptas nuestra ',
+    policyLink: 'Política de Protección de Datos',
+    accept: 'Aceptar',
+    dismissLabel: 'Cerrar aviso de cookies',
+  },
+
   whatsapp: {
     ariaLabel: 'Contactar por WhatsApp',
     tooltip: 'Escríbenos por WhatsApp',

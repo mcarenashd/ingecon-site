@@ -33,7 +33,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   build: {
-    inlineStylesheets: 'auto',
+    inlineStylesheets: 'always',
   },
   server: {
     port: 3000,

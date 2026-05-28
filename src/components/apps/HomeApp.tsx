@@ -6,7 +6,7 @@ import About from '../About';
 import Services from '../Services';
 import Clients from '../Clients';
 import Footer from '../Footer';
-import WhatsAppButton from '../WhatsAppButton';
+import CookieBanner from '../CookieBanner';
 import LazySection from '../LazySection';
 
 const Projects = lazy(() => import('../Projects'));
@@ -28,7 +28,7 @@ const HomeApp: React.FC = () => (
       </LazySection>
     </main>
     <Footer currentPath="/" />
-    <WhatsAppButton />
+    <CookieBanner />
   </LanguageProvider>
 );
 

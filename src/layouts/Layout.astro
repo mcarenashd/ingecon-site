@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 import Analytics from '@vercel/analytics/astro';
 import SpeedInsights from '@vercel/speed-insights/astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
 
 export interface Props {
   title: string;
@@ -209,6 +210,7 @@ const organizationSchema = {
 <body class="bg-white text-gray-700 font-sans leading-normal tracking-tight">
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
   <slot />
+  <WhatsAppButton />
   <Analytics />
   <SpeedInsights />
 </body>

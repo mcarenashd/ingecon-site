@@ -3,7 +3,7 @@ import { LanguageProvider } from '../../i18n';
 import Header from '../Header';
 import NotFound from '../NotFound';
 import Footer from '../Footer';
-import WhatsAppButton from '../WhatsAppButton';
+import CookieBanner from '../CookieBanner';
 
 const NotFoundApp: React.FC = () => (
   <LanguageProvider>
@@ -12,7 +12,7 @@ const NotFoundApp: React.FC = () => (
       <NotFound />
     </main>
     <Footer currentPath="/404" />
-    <WhatsAppButton />
+    <CookieBanner />
   </LanguageProvider>
 );
 

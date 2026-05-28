@@ -1,0 +1,24 @@
+---
+const PHONE = '573233072588';
+const message = 'Hola INGECON, me interesa conocer más sobre sus servicios de interventoría y consultoría.';
+const href = `https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`;
+---
+
+<a
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Contactar por WhatsApp"
+  title="Escríbenos por WhatsApp"
+  class="fixed bottom-6 right-6 z-40 inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-lg hover:shadow-xl motion-safe:hover:scale-110 transition-transform duration-200 motion-reduce:transition-none focus:outline-none focus:ring-4 focus:ring-[#25D366]/40"
+>
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    class="w-7 h-7"
+    viewBox="0 0 32 32"
+    fill="currentColor"
+  >
+    <path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.495-1.32.13-.302.226-.66.226-1.005 0-.62-.243-1.27-.846-1.535-.376-.16-.745-.245-1.146-.345m-2.39 4.42a8.23 8.23 0 0 1-8.222-8.222 8.23 8.23 0 0 1 8.222-8.221 8.23 8.23 0 0 1 8.222 8.221 8.23 8.23 0 0 1-8.222 8.222m0-17.91a9.7 9.7 0 0 0-9.7 9.688c0 1.71.473 3.398 1.346 4.864L5.502 23.7l3.715-1.86a9.65 9.65 0 0 0 4.504 1.146 9.7 9.7 0 0 0 9.7-9.688 9.7 9.7 0 0 0-9.7-9.687"></path>
+  </svg>
+</a>
