@@ -258,6 +258,6 @@ const en: Translations = {
     viewDetails: 'View details',
     hideDetails: 'Hide details',
   },
-} as const;
+};
 
 export default en;

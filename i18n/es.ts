@@ -256,7 +256,7 @@ const es = {
     viewDetails: 'Ver detalles',
     hideDetails: 'Ocultar detalles',
   },
-} as const;
+};
 
 export type Translations = typeof es;
 export default es;
