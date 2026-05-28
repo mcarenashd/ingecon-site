@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useTranslation } from '../i18n';
 
 // ──────────────────────────────────────────────
@@ -206,8 +207,42 @@ const Careers: React.FC = () => {
   const sendCVSubject = encodeURIComponent(t.careers.sendCVSubject);
   const sendCVUrl = `mailto:info@ingecon.com.co?subject=${sendCVSubject}`;
 
+  const jobPostingSchema = vacancies.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@graph': vacancies.map((v, i) => ({
+      '@type': 'JobPosting',
+      '@id': `https://ingecon.com.co/carreras#job-${i}`,
+      'title': v.titulo,
+      'description': [v.descripcion, ...v.requisitos].filter(Boolean).join(' '),
+      'datePosted': new Date().toISOString().split('T')[0],
+      'employmentType': v.tipoContrato || 'FULL_TIME',
+      'hiringOrganization': {
+        '@type': 'Organization',
+        'name': 'INGENIERÍA Y CONSULTORÍA INGECON S.A.S.',
+        'sameAs': 'https://ingecon.com.co',
+        'logo': 'https://ingecon.com.co/images/logo-ingecon-CUG5jr9Z.webp',
+      },
+      'jobLocation': {
+        '@type': 'Place',
+        'address': {
+          '@type': 'PostalAddress',
+          'addressLocality': v.ubicacion || 'Bogotá',
+          'addressCountry': 'CO',
+        },
+      },
+      'experienceRequirements': v.experiencia || undefined,
+      'jobBenefits': v.beneficios.length ? v.beneficios.join('; ') : undefined,
+      'applicantLocationRequirements': { '@type': 'Country', 'name': 'Colombia' },
+    })),
+  } : null;
+
   return (
     <section id="carreras" className="py-24 bg-gray-50">
+      {jobPostingSchema && (
+        <Helmet>
+          <script type="application/ld+json">{JSON.stringify(jobPostingSchema)}</script>
+        </Helmet>
+      )}
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="max-w-2xl mb-14">

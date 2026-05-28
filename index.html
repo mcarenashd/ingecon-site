@@ -8,14 +8,17 @@
     <title>INGECON S.A.S — Interventoría e Ingeniería con respaldo institucional</title>
     <meta name="description" content="Más de 25 años garantizando el cumplimiento técnico, financiero, ambiental, social y jurídico de proyectos de infraestructura pública en Colombia. Interventoría, consultoría y gerencia." />
 
+    <link rel="canonical" href="https://ingecon.com.co/" />
+
     <link rel="icon" type="image/webp" href="/images/logo-ingecon-CUG5jr9Z.webp" />
     <link rel="apple-touch-icon" href="/images/logo-ingecon-CUG5jr9Z.webp" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ingecon.com.co/" />
     <meta property="og:title" content="INGECON S.A.S — Interventoría e Ingeniería con respaldo institucional" />
     <meta property="og:description" content="Más de 25 años garantizando el cumplimiento técnico, financiero, ambiental, social y jurídico de proyectos de infraestructura pública en Colombia." />
-    <meta property="og:image" content="/images/logo-ingecon-CUG5jr9Z.webp" />
+    <meta property="og:image" content="https://ingecon.com.co/images/logo-ingecon-CUG5jr9Z.webp" />
     <meta property="og:locale" content="es_CO" />
     <meta property="og:locale:alternate" content="en_US" />
     <meta property="og:site_name" content="INGECON S.A.S." />
@@ -24,32 +27,87 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="INGECON S.A.S — Interventoría e Ingeniería" />
     <meta name="twitter:description" content="Más de 25 años en interventoría y consultoría de infraestructura pública en Colombia." />
-    <meta name="twitter:image" content="/images/logo-ingecon-CUG5jr9Z.webp" />
+    <meta name="twitter:image" content="https://ingecon.com.co/images/logo-ingecon-CUG5jr9Z.webp" />
 
-    <!-- Schema.org JSON-LD -->
+    <!-- Schema.org JSON-LD: Organization + LocalBusiness -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "INGENIERÍA Y CONSULTORÍA INGECON S.A.S.",
-      "alternateName": "INGECON S.A.S.",
-      "url": "https://ingecon.com.co",
-      "logo": "/images/logo-ingecon-CUG5jr9Z.webp",
-      "foundingDate": "2001",
-      "description": "Firma colombiana especializada en interventoría, consultoría y gerencia de proyectos de infraestructura pública.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Calle 148 No. 7G-42, Barrio Cedritos",
-        "addressLocality": "Bogotá",
-        "addressCountry": "CO"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+57-317-434-7113",
-        "contactType": "customer service",
-        "email": "info@ingecon.com.co",
-        "availableLanguage": ["Spanish", "English"]
-      }
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://ingecon.com.co/#organization",
+          "name": "INGENIERÍA Y CONSULTORÍA INGECON S.A.S.",
+          "alternateName": "INGECON S.A.S.",
+          "url": "https://ingecon.com.co/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://ingecon.com.co/images/logo-ingecon-CUG5jr9Z.webp",
+            "caption": "INGECON S.A.S."
+          },
+          "foundingDate": "2001",
+          "description": "Firma colombiana especializada en interventoría, consultoría y gerencia de proyectos de infraestructura pública.",
+          "taxID": "810.002.747-0",
+          "knowsAbout": [
+            "Interventoría de obras civiles",
+            "Interventoría de carreteras y vías",
+            "Interventoría de aeropuertos",
+            "Interventoría de túneles",
+            "Interventoría de obras de urbanismo",
+            "Consultoría en ingeniería",
+            "Gerencia de proyectos de infraestructura pública"
+          ],
+          "areaServed": {
+            "@type": "Country",
+            "name": "Colombia"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle 148 No. 7G-42, Barrio Cedritos",
+            "addressLocality": "Bogotá",
+            "addressRegion": "Cundinamarca",
+            "postalCode": "110131",
+            "addressCountry": "CO"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+57-317-434-7113",
+            "contactType": "customer service",
+            "email": "info@ingecon.com.co",
+            "availableLanguage": ["Spanish", "English"]
+          }
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://ingecon.com.co/#localbusiness",
+          "name": "INGECON S.A.S.",
+          "image": "https://ingecon.com.co/images/logo-ingecon-CUG5jr9Z.webp",
+          "url": "https://ingecon.com.co/",
+          "telephone": "+57-317-434-7113",
+          "email": "info@ingecon.com.co",
+          "priceRange": "$$$",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle 148 No. 7G-42, Barrio Cedritos",
+            "addressLocality": "Bogotá",
+            "addressRegion": "Cundinamarca",
+            "postalCode": "110131",
+            "addressCountry": "CO"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 4.7317,
+            "longitude": -74.0321
+          },
+          "openingHoursSpecification": [{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "08:00",
+            "closes": "17:30"
+          }],
+          "parentOrganization": { "@id": "https://ingecon.com.co/#organization" }
+        }
+      ]
     }
     </script>
 

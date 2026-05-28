@@ -6,11 +6,17 @@ const Hero: React.FC = () => {
   const heroBackground = `${import.meta.env.BASE_URL}images/calle-92-654YlBhL.webp`;
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center text-center text-white">
-      {/* Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url('${heroBackground}')` }}
+    <section id="inicio" className="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden">
+      {/* LCP image — semantic <img> with fetchpriority for fastest first paint */}
+      <img
+        src={heroBackground}
+        alt=""
+        aria-hidden="true"
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 w-full h-full object-cover"
+        width={1920}
+        height={1080}
       />
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/65" />
@@ -48,7 +54,7 @@ const Hero: React.FC = () => {
       <a
         href="#nosotros"
         aria-label={t.hero.scrollHint}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-60 hover:opacity-100 transition-opacity duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/60 rounded-md px-2 py-1"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-60 hover:opacity-100 transition-opacity duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/60 rounded-md px-2 py-1 z-10"
       >
         <span className="text-xs text-white tracking-widest uppercase">{t.hero.scrollHint}</span>
         <svg aria-hidden="true" focusable="false" className="w-5 h-5 text-white animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
