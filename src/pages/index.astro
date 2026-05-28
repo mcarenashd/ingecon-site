@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import HomeApp from '../components/apps/HomeApp';
-import es from '../i18n/es';
 
 const SITE_URL = 'https://ingecon.com.co';
 
@@ -46,14 +45,6 @@ const homeSchema = {
       'provider': { '@id': `${SITE_URL}/#organization` },
       'areaServed': { '@type': 'Country', 'name': 'Colombia' },
       'description': 'Instalación, operación y mantenimiento de infraestructura de telecomunicaciones, con gestión técnica, administrativa y financiera integral.',
-    },
-    {
-      '@type': 'FAQPage',
-      'mainEntity': es.faq.items.map((item) => ({
-        '@type': 'Question',
-        'name': item.question,
-        'acceptedAnswer': { '@type': 'Answer', 'text': item.answer },
-      })),
     },
   ],
 };

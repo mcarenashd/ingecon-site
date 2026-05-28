@@ -6,7 +6,6 @@ import About from '../About';
 import Services from '../Services';
 import Projects from '../Projects';
 import Clients from '../Clients';
-import FAQ from '../FAQ';
 import Contact from '../Contact';
 import Footer from '../Footer';
 import WhatsAppButton from '../WhatsAppButton';
@@ -20,7 +19,6 @@ const HomeApp: React.FC = () => (
       <Services />
       <Projects />
       <Clients />
-      <FAQ />
       <Contact />
     </main>
     <Footer currentPath="/" />
