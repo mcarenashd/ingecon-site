@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { LanguageProvider } from '../../i18n';
 import Header from '../Header';
 import Hero from '../Hero';
 import About from '../About';
 import Services from '../Services';
-import Projects from '../Projects';
 import Clients from '../Clients';
-import Contact from '../Contact';
 import Footer from '../Footer';
 import WhatsAppButton from '../WhatsAppButton';
+import LazySection from '../LazySection';
+
+const Projects = lazy(() => import('../Projects'));
+const Contact = lazy(() => import('../Contact'));
 
 const HomeApp: React.FC = () => (
   <LanguageProvider>
@@ -17,9 +19,13 @@ const HomeApp: React.FC = () => (
       <Hero />
       <About />
       <Services />
-      <Projects />
+      <LazySection minHeight="80vh">
+        <Projects />
+      </LazySection>
       <Clients />
-      <Contact />
+      <LazySection minHeight="80vh">
+        <Contact />
+      </LazySection>
     </main>
     <Footer currentPath="/" />
     <WhatsAppButton />
