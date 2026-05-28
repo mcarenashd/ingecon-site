@@ -13,8 +13,8 @@
     "@emailjs/browser": "^4.4.1",
     "@fontsource-variable/open-sans": "^5.2.7",
     "@fontsource/roboto-slab": "^5.2.8",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
     "react-helmet-async": "^3.0.0",
     "react-router-dom": "^7.15.1"
   },
