@@ -15,6 +15,7 @@ const Header: React.FC = () => {
     { target: { path: '/', hash: 'nosotros' }, label: t.nav.nosotros },
     { target: { path: '/', hash: 'servicios' }, label: t.nav.servicios },
     { target: { path: '/', hash: 'proyectos' }, label: t.nav.proyectos },
+    { target: { path: '/', hash: 'faq' }, label: t.nav.faq },
     { target: { path: '/', hash: 'contacto' }, label: t.nav.contacto },
     { target: { path: '/carreras' }, label: t.nav.carreras },
   ];

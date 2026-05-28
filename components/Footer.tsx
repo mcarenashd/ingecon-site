@@ -13,6 +13,7 @@ const Footer: React.FC = () => {
     { target: { path: '/', hash: 'nosotros' }, label: t.nav.nosotros },
     { target: { path: '/', hash: 'servicios' }, label: t.nav.servicios },
     { target: { path: '/', hash: 'proyectos' }, label: t.nav.proyectos },
+    { target: { path: '/', hash: 'faq' }, label: t.nav.faq },
     { target: { path: '/', hash: 'contacto' }, label: t.nav.contacto },
     { target: { path: '/carreras' }, label: t.nav.carreras },
     { target: { path: '/politica-de-datos' }, label: t.nav.politicaDatos },
@@ -64,6 +65,9 @@ const Footer: React.FC = () => {
             </a>
             <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
               {t.footer.description}
+            </p>
+            <p className="text-xs text-gray-500 mt-4">
+              <span className="font-semibold text-gray-400">{t.footer.nitLabel}:</span> {t.footer.nitValue}
             </p>
           </div>
 

@@ -4,6 +4,7 @@ const es = {
     nosotros: 'Nosotros',
     servicios: 'Servicios',
     proyectos: 'Proyectos',
+    faq: 'FAQ',
     contacto: 'Contacto',
     politicaDatos: 'Política de Datos',
     carreras: 'Trabaja con nosotros',
@@ -18,6 +19,12 @@ const es = {
     ctaPrimary: 'Hablemos de su proyecto',
     ctaSecondary: 'Ver trayectoria',
     scrollHint: 'Explorar',
+  },
+
+  whatsapp: {
+    ariaLabel: 'Contactar por WhatsApp',
+    tooltip: 'Escríbenos por WhatsApp',
+    prefilledMessage: 'Hola INGECON, me interesa conocer más sobre sus servicios de interventoría y consultoría.',
   },
 
   about: {
@@ -77,6 +84,46 @@ const es = {
     catEstudiosInt: 'Estudios y Diseños (Interventoría)',
   },
 
+  faq: {
+    eyebrow: 'Preguntas frecuentes',
+    heading: 'Lo que más nos preguntan sobre interventoría',
+    subheading: 'Conceptos clave sobre interventoría de obras civiles y nuestro alcance como firma.',
+    items: [
+      {
+        question: '¿Qué es una interventoría de obra civil en Colombia?',
+        answer: 'La interventoría es el control técnico, administrativo, financiero, ambiental, social y jurídico que ejerce un tercero independiente sobre la ejecución de un contrato de obra pública. Su objetivo es verificar que el contratista cumpla con las especificaciones, plazos, presupuesto y normativa aplicable, protegiendo los intereses de la entidad pública contratante.',
+      },
+      {
+        question: '¿Cuál es la diferencia entre interventoría y supervisión técnica?',
+        answer: 'La supervisión la ejerce directamente la entidad pública con su propio personal sobre contratos generalmente menores. La interventoría se contrata con una firma externa especializada para contratos de mayor complejidad o cuantía, y por mandato de la Ley 1474 de 2011 es obligatoria cuando la entidad no cuenta con la capacidad técnica para supervisar.',
+      },
+      {
+        question: '¿Cuándo es obligatoria la interventoría según la Ley 1474 de 2011?',
+        answer: 'La Ley 1474 de 2011 (Estatuto Anticorrupción) en su artículo 83 establece que las entidades públicas deben contratar interventoría externa cuando el valor del contrato de obra supere la menor cuantía o cuando la complejidad del objeto lo amerite. La interventoría debe ser independiente del contratista y de la entidad.',
+      },
+      {
+        question: '¿Qué funciones cumple un interventor de obra pública?',
+        answer: 'El interventor verifica el cumplimiento técnico de planos y especificaciones, controla cantidades de obra y actas parciales, aprueba pagos, vigila el cumplimiento ambiental y de seguridad, gestiona la comunicación entre contratista y entidad, lleva la bitácora de obra y emite informes mensuales y de cierre del contrato.',
+      },
+      {
+        question: '¿Cuánto cuesta una interventoría de obra en Colombia?',
+        answer: 'El costo de la interventoría suele expresarse como porcentaje del valor de la obra y depende de la complejidad, el plazo y el alcance del control. En proyectos de infraestructura pública en Colombia, los rangos típicos oscilan entre el 3% y el 8% del valor del contrato de obra. INGECON estructura su propuesta a partir del análisis detallado del proyecto.',
+      },
+      {
+        question: '¿Qué documentos emite la interventoría durante la ejecución?',
+        answer: 'Los entregables habituales incluyen: informe inicial, informes mensuales de avance, actas parciales y de obra ejecutada, bitácora de obra, conceptos técnicos sobre solicitudes del contratista, informes ambientales y sociales, acta de recibo final, e informe final con liquidación. Todos se entregan a la entidad contratante para soportar pagos y cierre del contrato.',
+      },
+      {
+        question: '¿Para qué entidades públicas ha trabajado INGECON?',
+        answer: 'Desde 2001 hemos ejecutado contratos de interventoría y consultoría para las principales entidades de infraestructura del país, incluyendo INVIAS, IDU, ANI, Aerocivil, ENTerritorio (antes FONADE), gobernaciones, municipios, alcaldías locales y empresas de servicios públicos. Nuestra trayectoria cubre obras viales, aeroportuarias, urbanísticas, edificaciones y saneamiento.',
+      },
+      {
+        question: '¿En qué ciudades opera INGECON?',
+        answer: 'Tenemos sede principal en Bogotá y ejecutamos proyectos a nivel nacional. Hemos desarrollado contratos en Cundinamarca, Antioquia, Nariño, Valle del Cauca, Caldas, Bolívar y otras regiones, según las necesidades de las entidades contratantes.',
+      },
+    ],
+  },
+
   clients: {
     eyebrow: 'Respaldo institucional',
     heading: 'Entidades que han confiado en nosotros',
@@ -113,6 +160,9 @@ const es = {
     description: 'Ingeniería y Consultoría INGECON S.A.S. — Más de 25 años respaldando proyectos de infraestructura pública en Colombia.',
     navTitle: 'Navegación',
     contactTitle: 'Contacto',
+    legalTitle: 'Información legal',
+    nitLabel: 'NIT',
+    nitValue: '810.002.747-0',
     copyright: 'Ingeniería y Consultoría INGECON S.A.S. Todos los derechos reservados.',
   },
 

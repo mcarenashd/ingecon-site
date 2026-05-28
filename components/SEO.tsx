@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { useTranslation } from '../i18n';
 
 const SITE_URL = 'https://ingecon.com.co';
-const DEFAULT_OG_IMAGE = `${SITE_URL}/images/logo-ingecon-CUG5jr9Z.webp`;
+const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 interface SEOProps {
   /** Path relative to SITE_URL, e.g. "/carreras". Defaults to "/" */

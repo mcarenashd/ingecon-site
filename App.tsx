@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { LanguageProvider, useTranslation } from './i18n';
 import Header from './components/Header';
@@ -7,11 +7,14 @@ import About from './components/About';
 import Services from './components/Services';
 import Projects from './components/Projects';
 import Clients from './components/Clients';
-import Careers from './components/Careers';
+import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import DataPolicy from './components/DataPolicy';
+import WhatsAppButton from './components/WhatsAppButton';
 import SEO from './components/SEO';
+
+const Careers = lazy(() => import('./components/Careers'));
+const DataPolicy = lazy(() => import('./components/DataPolicy'));
 
 const SITE_URL = 'https://ingecon.com.co';
 
@@ -57,6 +60,12 @@ const homeSchema = {
   ],
 };
 
+const RouteLoader: React.FC = () => (
+  <div className="min-h-[60vh] flex items-center justify-center">
+    <div className="w-8 h-8 border-2 border-[#6a9a10] border-t-transparent rounded-full animate-spin motion-reduce:animate-none" />
+  </div>
+);
+
 const Home: React.FC = () => {
   const { locale } = useTranslation();
   const title = locale === 'es'
@@ -74,6 +83,7 @@ const Home: React.FC = () => {
       <Services />
       <Projects />
       <Clients />
+      <FAQ />
       <Contact />
     </>
   );
@@ -90,7 +100,9 @@ const CareersRoute: React.FC = () => {
   return (
     <>
       <SEO path="/carreras" title={title} description={description} />
-      <Careers />
+      <Suspense fallback={<RouteLoader />}>
+        <Careers />
+      </Suspense>
     </>
   );
 };
@@ -103,7 +115,9 @@ const PolicyRoute: React.FC = () => {
   return (
     <>
       <SEO path="/politica-de-datos" title={title} noindex />
-      <DataPolicy />
+      <Suspense fallback={<RouteLoader />}>
+        <DataPolicy />
+      </Suspense>
     </>
   );
 };
@@ -122,6 +136,7 @@ const App: React.FC = () => {
           </Routes>
         </main>
         <Footer />
+        <WhatsAppButton />
       </div>
     </LanguageProvider>
   );

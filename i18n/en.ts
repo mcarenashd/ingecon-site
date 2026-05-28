@@ -6,6 +6,7 @@ const en: Translations = {
     nosotros: 'About Us',
     servicios: 'Services',
     proyectos: 'Projects',
+    faq: 'FAQ',
     contacto: 'Contact',
     politicaDatos: 'Data Policy',
     carreras: 'Careers',
@@ -20,6 +21,12 @@ const en: Translations = {
     ctaPrimary: 'Let\'s talk about your project',
     ctaSecondary: 'View our track record',
     scrollHint: 'Explore',
+  },
+
+  whatsapp: {
+    ariaLabel: 'Contact us on WhatsApp',
+    tooltip: 'Message us on WhatsApp',
+    prefilledMessage: 'Hello INGECON, I would like to know more about your oversight and consulting services.',
   },
 
   about: {
@@ -79,6 +86,46 @@ const en: Translations = {
     catEstudiosInt: 'Studies & Designs (Oversight)',
   },
 
+  faq: {
+    eyebrow: 'Frequently asked questions',
+    heading: 'What clients ask us most about oversight',
+    subheading: 'Key concepts about civil works oversight in Colombia and our scope as a firm.',
+    items: [
+      {
+        question: 'What is civil works oversight (interventoría) in Colombia?',
+        answer: 'Oversight (interventoría) is the technical, administrative, financial, environmental, social and legal control exercised by an independent third party over a public works contract. Its goal is to verify that the contractor meets specifications, deadlines, budget and applicable regulations, protecting the interests of the public contracting entity.',
+      },
+      {
+        question: 'What is the difference between interventoría and technical supervision?',
+        answer: 'Supervision is performed directly by the public entity with its own staff on smaller contracts. Interventoría is contracted with an external specialized firm for contracts of greater complexity or value. Per Law 1474 of 2011, it is mandatory when the entity lacks the technical capacity to supervise.',
+      },
+      {
+        question: 'When is interventoría mandatory under Law 1474 of 2011?',
+        answer: 'Law 1474 of 2011 (Anti-Corruption Statute), article 83, requires public entities to contract external interventoría when the works contract value exceeds the minimum threshold or when the complexity of the object warrants it. The interventor must be independent of both the contractor and the entity.',
+      },
+      {
+        question: 'What functions does a public works interventor perform?',
+        answer: 'The interventor verifies technical compliance with plans and specifications, controls work quantities and partial certifications, approves payments, oversees environmental and safety compliance, manages communication between contractor and entity, keeps the works logbook and issues monthly and closing reports.',
+      },
+      {
+        question: 'How much does interventoría cost in Colombia?',
+        answer: 'Interventoría cost is usually expressed as a percentage of the works value and depends on complexity, timeframe and scope. In public infrastructure projects in Colombia, typical ranges are 3% to 8% of the works contract value. INGECON structures its proposal based on a detailed project analysis.',
+      },
+      {
+        question: 'What documents does interventoría issue during execution?',
+        answer: 'Typical deliverables include: initial report, monthly progress reports, partial and executed-works certifications, works logbook, technical opinions on contractor requests, environmental and social reports, final acceptance certificate, and final report with contract liquidation. All are delivered to the contracting entity to support payments and contract closure.',
+      },
+      {
+        question: 'Which public entities has INGECON worked for?',
+        answer: 'Since 2001 we have executed oversight and consulting contracts for the country\'s main infrastructure entities, including INVIAS, IDU, ANI, Aerocivil, ENTerritorio (formerly FONADE), regional governments, municipalities, local mayoralties and utility companies. Our track record covers roadway, airport, urban, building and sanitation works.',
+      },
+      {
+        question: 'In which cities does INGECON operate?',
+        answer: 'Headquartered in Bogotá, we execute projects nationwide. We have developed contracts in Cundinamarca, Antioquia, Nariño, Valle del Cauca, Caldas, Bolívar and other regions, according to the needs of contracting entities.',
+      },
+    ],
+  },
+
   clients: {
     eyebrow: 'Institutional backing',
     heading: 'Entities that have trusted us',
@@ -115,6 +162,9 @@ const en: Translations = {
     description: 'Ingeniería y Consultoría INGECON S.A.S. — Over 25 years supporting public infrastructure projects in Colombia.',
     navTitle: 'Navigation',
     contactTitle: 'Contact',
+    legalTitle: 'Legal',
+    nitLabel: 'Tax ID (NIT)',
+    nitValue: '810.002.747-0',
     copyright: 'Ingeniería y Consultoría INGECON S.A.S. All rights reserved.',
   },
 
